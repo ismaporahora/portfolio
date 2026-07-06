@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 02" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span>Case 02 / 03</span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidence</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Strategic call</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Deciding not to scale the product</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer — research design, instruments, analysis, proposal</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Team</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 people + education specialists</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">November 2025 – June 2026</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Tools</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">field observation · usability tests · Mixpanel · GA4 · session replays</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#context" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Context</a>
+        <a href="#built" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What I built</a>
+        <a href="#showed" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What the data showed</a>
+        <a href="#decision" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">The decision</a>
+        <a href="#caveats" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Caveats</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">TL;DR — We spent six months measuring whether Planificando was creating real value for teachers, instead of guessing. The evidence showed initial use without sustained adoption, and located the real drop-off in a different funnel step than the team assumed. The conclusion was to redesign the core flow rather than scale the current product. That redesign (V2) is now in prototype.</div>
+
+      <h2 id="context" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Context</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">By late 2025 Planificando had users but no clear picture of whether it was working. The team's stated goal for the semester: move from intuition-based validation to evidence-based validation. Measure, observe, document, learn.</p>
+
+      <h2 id="built" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What I built</h2>
+      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 40px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:8px">The validation methodology and instruments: product-side and classroom-side, with an observation protocol for the pilot.</li>
+        <li style="margin-bottom:8px">Usability tests and field work: workshops in schools, individual tests with teachers over 50, a usability round in Vicente López, session replays.</li>
+        <li style="margin-bottom:8px">The UX report: 12 versions, crossing usage data (Aug 2025–Mar 2026), qualitative feedback, email campaigns, and analytics. Cleaned base: 189 real users, 105 active, 56% activation. 17 issues prioritized P0/P1.</li>
+      </ul>
+
+      <h2 id="showed" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What the data showed</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The board attributed the activation drop to the step between clicking "create" and generating a plan. The funnel data showed that step converts at 95.6%. The real drop, around 50%, was one step earlier: between login and clicking "create". Teachers weren't failing to generate; they weren't starting.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 18px">
+        <div style="flex:1 1 160px;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#2F6F4E">95.6%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">"create" → generate (assumed problem)</div></div>
+        <div style="flex:1 1 160px;background:#FFFDF4;border:1px solid #E9DFB0;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#B23A2E">~50%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">login → "create" (real drop)</div></div>
+      </div>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Combined with the qualitative evidence, the picture was consistent: teachers used the product with guidance, but organic, sustained adoption wasn't happening with the current flow.</p>
+
+      <h2 id="decision" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The decision</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">My proposal to the team: don't scale this version. The semester conclusion was to redefine the core flow. That became V2, a conversational, step-by-step generation flow. I built the first prototype (three entry points, five-step flow) in June 2026.</p>
+
+      <h2 id="caveats" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Caveats</h2>
+      <ol style="font-size:15px;line-height:1.65;color:#2A2D3A;margin:0 0 0;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:10px"><b>Small base:</b> 189 users. Every number here is a directional signal, not statistical proof.</li>
+        <li style="margin-bottom:10px"><b>Fine-grained metrics</b> only exist from March 20, 2026, when Mixpanel was instrumented. Earlier conclusions rest on coarser data and qualitative work.</li>
+        <li style="margin-bottom:10px"><b>V2 is a prototype.</b> Whether the redesign fixes adoption is an open question; this case documents the decision, not its outcome.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="01-shipping-design-changes.dc.html" style="color:#6B6A63;text-decoration:none">← Shipping design changes</a>
+    <a href="03-ux-bug-data-model.dc.html" style="color:#3452D9;text-decoration:none">Next: A UX bug traced to the data model →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 01" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span>Case 01 / 03</span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">01 · Process</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Shipping design changes directly</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer — research, interaction design, UX writing, frontend implementation</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Team</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 people (2 technical)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">April–June 2026</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Tools</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Figma · Claude Code · Mixpanel · session replays</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#context" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Context</a>
+        <a href="#problem" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Problem</a>
+        <a href="#method" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Method change</a>
+        <a href="#shipped" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What shipped</a>
+        <a href="#measured" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Measured case</a>
+        <a href="#caveats" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Caveats</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">TL;DR — Design changes at Planificando were stuck in a handoff bottleneck: every fix had to be requested from a two-person tech team, and most never shipped. I changed the working method, designing and implementing frontend changes directly with Claude Code, with tech reviewing before merge. In two months this cleared a six-month backlog of UX fixes. One of those changes, renaming "Regenerate" to "Request changes" with added onboarding, is measurable: weekly unique usage went from a ceiling of 4 users to a peak of 9, sustained at 7.</div>
+
+      <h2 id="context" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Context</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Planificando generates lesson-plan sequences for primary school teachers in Argentina. The team is five people, two of them technical. I own the design surface: product UX, UX writing, brand, and landing.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">By early 2026 we knew what was broken. A usability report I built from field observation, session replays, and analytics had identified 17 UX issues, prioritized P0/P1. The problem was shipping the fixes.</p>
+
+      <h2 id="problem" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The problem</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Every interface change followed the same path: I designed it, wrote a ticket, and waited. With a two-person tech team focused on model quality and infrastructure, design tickets were usually deprioritized. Details got lost in translation. Some fixes waited for months; the interface redesign from a year earlier had been frozen almost entirely.</p>
+
+      <h2 id="method" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The method change</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 16px;max-width:62ch">In April 2026 I stopped requesting changes and started implementing them.</p>
+      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 16px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:8px">Claude Code with a custom skill built for Planificando's codebase, so implementation follows the project's conventions.</li>
+        <li style="margin-bottom:8px">I design and implement frontend changes directly: UX writing, visual adjustments, layout, new screens.</li>
+        <li style="margin-bottom:8px">Tech reviews every PR before merge.</li>
+      </ul>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">To be precise about what this is and isn't: I'm not a developer. I'm a designer who can take a change from Figma to a reviewed pull request. Backend, data model, and infrastructure remain with the tech team.</p>
+
+      <h2 id="shipped" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 8px;scroll-margin-top:24px">What shipped</h2>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9B9A90;margin-bottom:16px">May–June 2026</div>
+      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 40px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:8px">A text library for Language: a new page with filters (genre, length, grade) and text selection integrated into the planning flow.</li>
+        <li style="margin-bottom:8px">"Regenerate" renamed to "Request changes", plus onboarding (detailed below).</li>
+        <li style="margin-bottom:8px">A unified design system in code: single palette, consistent icons, shared components.</li>
+        <li style="margin-bottom:8px">The waiting screen: replaced a spinner with 11 rotating pedagogical tips and a progress bar.</li>
+        <li style="margin-bottom:8px">The editing screen: clear hierarchy, pill buttons, inline title editing.</li>
+        <li style="margin-bottom:8px">A diff view for "Request changes": word-level highlights of what the AI changed, a side panel with three states, "Undo all".</li>
+        <li style="margin-bottom:8px">Smaller fixes: destructive actions in red, filters in "My plans", a two-column login, fixed toolbar.</li>
+      </ul>
+
+      <h2 id="measured" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The measured case: "Regenerate" → "Request changes"</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The regeneration feature lets teachers ask the AI to modify a generated plan. Usage data and field observation showed it was underused: the ratio of regenerations to generations was 0.14 in organic use versus 0.86 when teachers had live guidance in workshops. Teachers didn't understand what "Regenerate" meant, or feared losing their work.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Shipped May 13, 2026</b>Renamed the action to "Pedir cambios" (Request changes), the phrase teachers used when describing what they wanted. Added onboarding explaining what the feature does and that nothing is lost.</div>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The UI label changed but the underlying Mixpanel event didn't, so the tracking series is continuous: a clean before/after on the same event.</p>
+      <div style="font-size:13.5px;line-height:1.6;color:#2A2D3A;background:#FFFDF4;border:1px solid #E9DFB0;border-radius:8px;padding:18px 20px;margin:0 0 18px;max-width:62ch">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:10px">Results — weekly unique users</div>
+        <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end">
+          <div><div style="font-family:Fraunces,serif;font-size:34px;font-weight:600;line-height:1;color:#14161F">4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:4px">before (ceiling)</div></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#9B9A90;padding-bottom:6px">→</div>
+          <div><div style="font-family:Fraunces,serif;font-size:34px;font-weight:600;line-height:1;color:#2F6F4E">9</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:4px">peak, sustained at 7</div></div>
+          <div style="margin-left:auto"><div style="font-family:Fraunces,serif;font-size:34px;font-weight:600;line-height:1;color:#14161F">≈2.25×</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:4px">lift</div></div>
+        </div>
+      </div>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Clicks per user dropped from ~4.3 to ~2.3–3.0, consistent with the hypothesis that iteration became more efficient. This is a hypothesis, not a closed conclusion.</p>
+
+      <h2 id="caveats" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Caveats</h2>
+      <ol style="font-size:15px;line-height:1.65;color:#2A2D3A;margin:0 0 40px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:10px"><b>Small N.</b> Weekly volumes are single-digit uniques. The jump is directional, not statistically significant.</li>
+        <li style="margin-bottom:10px"><b>Bundled release.</b> May 13 shipped the rename alongside the text library and UI polish. The lift can't be fully attributed to the rename in isolation.</li>
+        <li style="margin-bottom:10px"><b>Some values inferred.</b> Two weekly data points were derived from week-over-week variations of adjacent points, not read directly.</li>
+      </ol>
+
+      <div style="border-top:1px solid #E4E2D6;padding-top:24px;max-width:62ch">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:10px">Closing</div>
+        <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0">The rename is a small UX-writing story. The larger change is throughput: the evidence for most of these fixes had existed for months, waiting on a queue that never cleared. For a small team, a designer who can ship, with review and within scope, changes the economics of iteration.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="../index.html" style="color:#6B6A63;text-decoration:none">← All cases</a>
+    <a href="02-deciding-not-to-scale.dc.html" style="color:#3452D9;text-decoration:none">Next: Deciding not to scale →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
