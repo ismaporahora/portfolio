@@ -11,17 +11,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
+.postit { transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
+.postit:hover { transform: rotate(0deg) translateY(-3px) !important; box-shadow: 0 10px 20px rgba(20,22,31,0.15) !important; }
 </style>
 </helmet>
 
 <!-- ===== HERO ===== -->
-<div data-screen-label="Hero" style="position:relative;background:#14161F url('assets/hero-workshop.webp') center/cover no-repeat;color:#F3F2EA;padding:56px 8vw 96px;overflow:hidden">
-  <div style="position:absolute;inset:0;background:rgba(17,19,27,0.92);pointer-events:none"></div>
-  <div style="position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#9B9A90;margin-bottom:72px">
+<div data-screen-label="Hero" style="background:#14161F;color:#F3F2EA;padding:56px 0 96px">
+  <div style="max-width:1180px;margin:0 auto;padding:0 8vw;box-sizing:border-box">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#9B9A90;margin-bottom:72px">
     <span style="letter-spacing:0.1em">ISMAEL MENEGOLLA</span>
     <a href="#work" style="color:#F3F2EA;text-decoration:none;border-bottom:1px solid #2A2D3A;padding-bottom:2px">Work ↓</a>
   </div>
-  <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
+  <div style="display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
     <div style="flex:1 1 520px;min-width:0">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:#9B9A90;margin-bottom:22px">Product Design — Buenos Aires</div>
       <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(38px,5.2vw,64px);line-height:1.06;letter-spacing:-0.01em;margin:0 0 26px;max-width:15ch">Product design, from <em style="font-weight:400;color:#F5D563">human</em> research to working <em style="font-weight:400;color:#F5D563">software</em>.</h1>
@@ -32,10 +34,11 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
         <span>EN · ES · PT</span>
       </div>
     </div>
-    <div style="flex:0 1 236px;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 10px 24px rgba(0,0,0,0.28);transform:rotate(3.5deg);border-radius:2px;margin-top:34px">
+    <div class="postit" style="flex:0 1 236px;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 10px 24px rgba(0,0,0,0.28);transform:rotate(3.5deg);border-radius:2px;margin-top:34px">
       <b style="display:block;font-size:13px;margin-bottom:5px">How decisions happen</b>
       Everything I ship starts as a written proposal: problem, options, trade-offs. Discussed with education and tech, reviewed before merge. The cases below show that format.
     </div>
+  </div>
   </div>
 </div>
 
@@ -57,7 +60,7 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
         <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">{{ c.dek }}</p>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
       </div>
-      <div style="flex:0 1 210px;align-self:flex-start;background:{{ noteColor }};color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate({{ c.noteTilt }}deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:{{ noteColor }};color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate({{ c.noteTilt }}deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
         <b style="display:block;font-size:12px;margin-bottom:4px">{{ c.noteTitle }}</b>{{ c.noteBody }}
       </div>
     </a>
@@ -91,7 +94,7 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
     <div style="flex:1 1 400px;min-width:0">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;border-left:3px solid #2F6F4E;padding:4px 0 4px 16px;margin-bottom:26px">TL;DR — one paragraph, at the top of every case.</div>
       <h4 style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;color:#14161F">The problem</h4>
-      <div style="float:right;width:200px;margin:0 -16px 20px 24px;background:{{ noteColor }};color:#3A2F0B;padding:14px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.55;transform:rotate(1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <div class="postit" style="float:right;width:200px;margin:0 -16px 20px 24px;background:{{ noteColor }};color:#3A2F0B;padding:14px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.55;transform:rotate(1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
         <b style="display:block;font-size:11.5px;margin-bottom:4px">Caveat</b>Small sample size. Not statistically significant.
       </div>
       <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0 0 18px;max-width:60ch">Every design change followed the same path: I designed it, wrote a ticket, and waited. With a two-person tech team focused on model quality, design tickets were usually deprioritized.</p>
@@ -118,9 +121,12 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
         <a href="https://be.net/smenegolla" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9B9A90;text-decoration:none">print &amp; earlier work → Behance ↗</a>
       </div>
     </div>
-    <div style="flex:0 1 236px;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 8px 20px rgba(20,22,31,0.14);transform:rotate(-2.5deg);border-radius:2px;margin-top:56px">
-      <b style="display:block;font-size:13px;margin-bottom:5px">Availability</b>
-      Open to remote roles across LATAM and internationally. Willing to relocate for the right opportunity.
+    <div style="flex:0 1 236px;margin-top:56px">
+      <img src="assets/ismael.webp" alt="Ismael Menegolla" style="width:100%;display:block;border-radius:12px;box-shadow:0 8px 20px rgba(20,22,31,0.10)">
+      <div class="postit" style="position:relative;margin:-46px 0 0 -22px;width:100%;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 8px 20px rgba(20,22,31,0.18);transform:rotate(-2.5deg);border-radius:2px">
+        <b style="display:block;font-size:13px;margin-bottom:5px">Availability</b>
+        Open to remote roles across LATAM and internationally. Willing to relocate for the right opportunity.
+      </div>
     </div>
   </div>
 </div>
