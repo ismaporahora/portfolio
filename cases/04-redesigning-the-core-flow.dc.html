@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 04" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span>Case 04 / 04</span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Craft</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Prototype · 2026</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Redesigning the core flow</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer — all design and UX decisions</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Status</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Working prototype — not shipped, no usage data</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#starting" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">The starting point</a>
+        <a href="#d1" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 1</a>
+        <a href="#d2" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 2</a>
+        <a href="#d3" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 3</a>
+        <a href="#d4" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 4</a>
+        <a href="#waiting" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Waiting screen</a>
+        <a href="#status" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Status</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">Where this started — Case 02 ended with a decision: redesign the core flow instead of scaling the current one. This case is what the redesign changed. I prototyped V2 and wrote each change as a decision: what V1 did, what the evidence said, what I chose.</div>
+
+      <h2 id="starting" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The starting point</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 was a form. The teacher selected a grade, described the topic, retyped what her students knew, picked a class count from a bare dropdown, and waited about 30 seconds for a document. Every generation started from zero. The plan list filled with near-duplicates because regenerating was the only way to iterate.</p>
+
+      <h2 id="d1" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 1 · The grade became the workspace</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 organized the app around the generator; grades, plans and texts were parallel menu sections. In V2 each grade is a space: the home screen is the grade, plans live inside it, and the app opens where the teacher works. The unit of a teacher's work is the group, not the document.</p>
+      <!-- Images hidden until assets are dropped into assets/. To re-enable: uncomment each block and change the preceding paragraph's margin back from 40px to 18px.
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d1-before.jpg" alt="V1 — app organized around the generator" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d1-after.jpg" alt="V2 — the grade as the workspace" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V2</div></div>
+      </div>
+      -->
+
+      <h2 id="d2" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 2 · Context became something the product keeps</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 asked "¿Qué conocen tus estudiantes sobre el tema?" on every generation and discarded the answer. V2 stores a description of the group per grade — free text, in the teacher's words, plus files like student lists — and uses it for every plan. The empty state says why it's worth loading: "para que cada planificación salga a la medida."</p>
+      <!--
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d2-before.jpg" alt="V1 — context asked on every generation and discarded" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d2-after.jpg" alt="V2 — group description stored per grade" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V2</div></div>
+      </div>
+      -->
+
+      <h2 id="d3" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 3 · The system proposes, the teacher adjusts</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 asked for a class count before showing anything. V2 inverts it: before generating, a review screen shows what the system understood (group, subject, topic, text) and recommends a class count the teacher can move on a slider. The same inversion drives the Lengua flow: instead of a 39-text library to browse, the system suggests two texts matched to the request, with the option to paste your own.</p>
+      <!--
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d3-before.jpg" alt="V1 — class count asked up front in a bare dropdown" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d3-after.jpg" alt="V2 — review screen with recommended class count on a slider" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V2</div></div>
+      </div>
+      -->
+
+      <h2 id="d4" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 4 · Iteration moved inside the document</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 had a separate edit mode and no way to ask for changes; iterating meant generating again. In V2 the plan itself is editable in place, and a "¿Qué cambiamos?" panel takes change requests — with suggested changes as chips, so the teacher learns what kinds of adjustments are possible.</p>
+      <!--
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d4-before.jpg" alt="V1 — separate edit mode, no change requests" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
+        <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d4-after.jpg" alt="V2 — plan editable in place with the ¿Qué cambiamos? panel" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V2</div></div>
+      </div>
+      -->
+
+      <h2 id="waiting" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">How the waiting screen was explored</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 shows a checklist and a progress bar for about 30 seconds. The exploration compared combinable variants — streaming the plan as it writes, tips, curriculum grounding, skeleton screens, personalization signals — and streaming was the direction chosen, because the wait shrinks when the result is visible while it builds.</p>
+      <!--
+      <div style="margin:0 0 40px"><img src="../assets/case04-exploration-espera.jpg" alt="Waiting screen exploration — combinable variants compared" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"></div>
+      -->
+
+      <h2 id="status" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Status</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0;max-width:62ch">V2 is a working prototype. It has not shipped and there is no usage data. The decisions above are hypotheses the evidence from case 02 supports; validation with teachers is the next step.</p>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="03-ux-bug-data-model.dc.html" style="color:#6B6A63;text-decoration:none">← A UX bug traced to the data model</a>
+    <a href="../index.html" style="color:#3452D9;text-decoration:none">Back to all cases →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
