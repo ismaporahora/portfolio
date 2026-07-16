@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ismael Menegolla — Product Designer</title>
+<meta name="description" content="I look for the most direct way to solve a problem, at both ends of the process: testing with teachers inside real classrooms, and shipping my own design changes to production code.">
+<meta property="og:title" content="Ismael Menegolla — Product Designer">
+<meta property="og:description" content="I look for the most direct way to solve a problem, at both ends of the process: testing with teachers inside real classrooms, and shipping my own design changes to production code.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ismael Menegolla">
+<meta name="twitter:card" content="summary">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -33,7 +40,7 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
         <span>EN · ES · PT · Buenos Aires</span>
       </div>
     </div>
-    <div class="postit" style="flex:0 1 236px;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 10px 24px rgba(0,0,0,0.28);transform:rotate(3.5deg);border-radius:2px;margin-top:34px">
+    <div class="postit" style="flex:0 1 236px;background:#F5D563;color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 10px 24px rgba(0,0,0,0.28);transform:rotate(3.5deg);border-radius:2px;margin-top:34px">
       <b style="display:block;font-size:13px;margin-bottom:5px">On seniority</b>
       I've held the product designer title for a year and a half, and designed for ten. These cases show scope and decisions, so you can judge seniority yourself.
     </div>
@@ -48,60 +55,70 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
     <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6A63;margin:0;max-width:40ch;text-align:right">Four cases from 18 months at Planificando, an AI lesson-planning tool for Argentine primary teachers.</p>
   </div>
 
-  <sc-for list="{{ featuredCases }}" as="c" hint-placeholder-count="2">
-    <a href="{{ c.href }}" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-      <div style="flex:1 1 360px;min-width:0">
-        <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">{{ c.num }} · {{ c.cat }}</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:{{ c.statusColor }};display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:{{ c.statusColor }};display:inline-block"></span>{{ c.status }}</span>
-        </div>
-        <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">{{ c.title }}</h3>
-        <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">{{ c.dek }}</p>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
+  <!-- Case cards are pre-rendered static HTML so crawlers see real content.
+       Hidden brand case: cases/04-brand-for-teachers.dc.html — renumber to 05 if re-enabled. -->
+  <a href="cases/01-shipping-design-changes.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">01 · Process</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped</span>
       </div>
-      <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:{{ noteColor }};color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate({{ c.noteTilt }}deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-        <b style="display:block;font-size:12px;margin-bottom:4px">{{ c.noteTitle }}</b>{{ c.noteBody }}
-      </div>
-    </a>
-  </sc-for>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Shipping design changes directly</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Design fixes were stuck waiting on a two-person tech team. I started implementing changes myself with Claude Code, reviewed by tech before merge. One resulting change is measured below.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
+    </div>
+    <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <b style="display:block;font-size:12px;margin-bottom:4px">Result</b>4 to 9 weekly uniques, sustained at 7. Small sample size.
+    </div>
+  </a>
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
-    <sc-for list="{{ compactCases }}" as="c" hint-placeholder-count="2">
-      <a href="{{ c.href }}" style="text-decoration:none;color:inherit;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:30px 32px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease;display:flex;flex-direction:column;gap:12px" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">{{ c.num }} · {{ c.cat }}</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:{{ c.statusColor }};display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:{{ c.statusColor }};display:inline-block"></span>{{ c.status }}</span>
-        </div>
-        <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:21px;line-height:1.25;margin:0;color:#14161F">{{ c.title }}</h3>
-        <p style="font-size:14px;line-height:1.6;color:#2A2D3A;margin:0;flex:1">{{ c.dek }}</p>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
-      </a>
-    </sc-for>
-  </div>
+  <a href="cases/02-deciding-not-to-scale.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidence</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Strategic call</span>
+      </div>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Deciding not to scale the product</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Six months of research and usage data on whether Planificando was working for teachers. The evidence pointed to redesigning the core flow, not scaling the current one.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
+    </div>
+    <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <b style="display:block;font-size:12px;margin-bottom:4px">Outcome</b>The team redirected to a redesign of the core flow (V2). My part was the evidence that informed the decision, and the first prototype.
+    </div>
+  </a>
+
+  <a href="cases/03-ux-bug-data-model.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">03 · Systems</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Deployed 17/6</span>
+      </div>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">A UX bug traced to the data model</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Teachers were seeing duplicated grades. The cause was in the data model, not the interface. Diagnosed and shipped to production.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
+    </div>
+    <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <b style="display:block;font-size:12px;margin-bottom:4px">Method</b>Same decision framework I'd used for a similar problem in January.
+    </div>
+  </a>
+
+  <a href="cases/04-redesigning-the-core-flow.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+    <div style="flex:1 1 360px;min-width:0">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Craft</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Prototype</span>
+      </div>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Redesigning the core flow</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">The evidence from case 02 pointed at the flow, not the features. I rebuilt the product around the grade: context loads once, the teacher states intent in her own words, and changes happen inside the document.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
+    </div>
+    <div class="postit" style="flex:0 1 210px;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
+      <b style="display:block;font-size:12px;margin-bottom:4px">Status</b>Prototype in validation. No usage data yet.
+    </div>
+  </a>
+
 </div>
 
-<!-- ===== READING LAYOUT PREVIEW ===== -->
-<sc-if value="{{ showPreview }}" hint-placeholder-val="{{ true }}">
-<div data-screen-label="Reading preview" style="padding:70px 8vw 100px;max-width:1180px;margin:0 auto;box-sizing:border-box">
-  <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#9B9A90;margin-bottom:14px">How a case reads — page layout preview</div>
-  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:56px 64px;display:flex;flex-wrap:wrap;gap:44px">
-    <div style="flex:0 0 150px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9B9A90">
-      <sc-for list="{{ spineSteps }}" as="s" hint-placeholder-count="7">
-        <div style="padding:10px 0 10px 14px;border-left:2px solid {{ s.border }};color:{{ s.color }};font-weight:{{ s.weight }};margin-bottom:2px">{{ s.label }}</div>
-      </sc-for>
-    </div>
-    <div style="flex:1 1 400px;min-width:0">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;border-left:3px solid #2F6F4E;padding:4px 0 4px 16px;margin-bottom:26px">TL;DR — one paragraph, at the top of every case.</div>
-      <h4 style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;color:#14161F">The problem</h4>
-      <div class="postit" style="float:right;width:200px;margin:0 -16px 20px 24px;background:{{ noteColor }};color:#3A2F0B;padding:14px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.55;transform:rotate(1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-        <b style="display:block;font-size:11.5px;margin-bottom:4px">Caveat</b>Small sample size. Not statistically significant.
-      </div>
-      <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0 0 18px;max-width:60ch">Every design change followed the same path: I designed it, wrote a ticket, and waited. With a two-person tech team focused on model quality, design tickets were usually deprioritized.</p>
-      <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0;max-width:60ch">The fixes already existed. The problem was getting them shipped.</p>
-    </div>
-  </div>
-</div>
-</sc-if>
 
 <!-- ===== WHERE THIS IS GOING ===== -->
 <div data-screen-label="Where this is going" style="padding:40px 8vw 90px;max-width:1180px;margin:0 auto;box-sizing:border-box">
@@ -109,7 +126,7 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
     <div style="flex:1 1 560px;min-width:0">
       <h2 style="font-family:Fraunces,serif;font-weight:600;font-size:28px;margin:0 0 24px;color:#14161F">Where this is going</h2>
       <p style="font-size:16px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:60ch">When I started, I thought design was mostly about visual craft. Over the years I learned that most design problems are decision problems: people trying to agree on what to build and why.</p>
-      <p style="font-size:16px;line-height:1.72;color:#2A2D3A;margin:0 0 30px;max-width:60ch">AI changed the part in between. Turning a decision into working software got fast — I've spent the past year shipping my own design changes to production. What didn't get faster is the ends: understanding what's worth building, and checking whether it worked for a real person. That's where I put my time.</p>
+      <p style="font-size:16px;line-height:1.72;color:#2A2D3A;margin:0 0 30px;max-width:60ch">AI changed the part in between. Turning a decision into working software got fast — I've spent this year shipping my own design changes to production. What didn't get faster is the ends: understanding what's worth building, and checking whether it worked for a real person. That's where I put my time.</p>
       <div style="display:flex;gap:20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:#6B6A63;margin:0 0 40px">
         <span>Research</span><span style="color:#C9C7BA">·</span><span>Craft</span><span style="color:#C9C7BA">·</span><span>Shipping</span>
       </div>
@@ -122,7 +139,7 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
     </div>
     <div style="flex:0 1 236px;margin-top:56px">
       <img src="assets/ismael.webp" alt="Ismael Menegolla" style="width:100%;display:block;border-radius:12px;box-shadow:0 8px 20px rgba(20,22,31,0.10)">
-      <div class="postit" style="position:relative;margin:-46px 0 0 -22px;width:100%;background:{{ noteColor }};color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 8px 20px rgba(20,22,31,0.18);transform:rotate(-2.5deg);border-radius:2px">
+      <div class="postit" style="position:relative;margin:-46px 0 0 -22px;width:100%;background:#F5D563;color:#3A2F0B;padding:18px 20px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.55;box-shadow:0 8px 20px rgba(20,22,31,0.18);transform:rotate(-2.5deg);border-radius:2px">
         <b style="display:block;font-size:13px;margin-bottom:5px">Availability</b>
         Open to remote roles across LATAM and internationally. Willing to relocate for the right opportunity.
       </div>
@@ -133,47 +150,5 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
 <footer style="padding:40px 8vw 60px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9B9A90;text-align:center">This page is built with Claude Code, deployed on Vercel.</footer>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;noteColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#F5D563&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#F5D563&quot;,&quot;#F2B3A7&quot;,&quot;#BFD9C8&quot;,&quot;#C9D4F2&quot;],&quot;section&quot;:&quot;Style&quot;},&quot;showPreview&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
-class Component extends DCLogic {
-  renderVals() {
-    const noteColor = this.props.noteColor ?? '#F5D563';
-    const check = '#2F6F4E', ink = '#14161F';
-    return {
-      noteColor,
-      showPreview: this.props.showPreview ?? false,
-      featuredCases: [
-        { num: '01', cat: 'Process', status: 'Shipped', statusColor: check, href: 'cases/01-shipping-design-changes.dc.html',
-          title: 'Shipping design changes directly',
-          dek: "Design fixes were stuck waiting on a two-person tech team. I started implementing changes myself with Claude Code, reviewed by tech before merge. One resulting change is measured below.",
-          noteTitle: 'Result', noteBody: '4 to 9 weekly uniques, sustained at 7. Small sample size.', noteTilt: 2 },
-        { num: '02', cat: 'Evidence', status: 'Strategic call', statusColor: ink, href: 'cases/02-deciding-not-to-scale.dc.html',
-          title: 'Deciding not to scale the product',
-          dek: 'Six months of research and usage data on whether Planificando was working for teachers. The evidence pointed to redesigning the core flow, not scaling the current one.',
-          noteTitle: 'Outcome', noteBody: 'The team redirected to a redesign of the core flow (V2). My part was the evidence that informed the decision, and the first prototype.', noteTilt: -2 },
-        { num: '03', cat: 'Systems', status: 'Deployed 17/6', statusColor: check, href: 'cases/03-ux-bug-data-model.dc.html',
-          title: 'A UX bug traced to the data model',
-          dek: 'Teachers were seeing duplicated grades. The cause was in the data model, not the interface. Diagnosed and shipped to production.',
-          noteTitle: 'Method', noteBody: "Same decision framework I'd used for a similar problem in January.", noteTilt: 2 },
-        { num: '04', cat: 'Craft', status: 'Prototype', statusColor: ink, href: 'cases/04-redesigning-the-core-flow.dc.html',
-          title: 'Redesigning the core flow',
-          dek: 'The evidence from case 02 pointed at the flow, not the features. I rebuilt the product around the grade: context loads once, the teacher states intent in her own words, and changes happen inside the document.',
-          noteTitle: 'Status', noteBody: 'Prototype in validation. No usage data yet.', noteTilt: -2 },
-        // Hidden for now — re-enable by uncommenting:
-        // { num: '04', cat: 'Brand', status: 'Dec 2025', statusColor: check, href: 'cases/04-brand-for-teachers.dc.html',
-        //   title: 'A brand for Argentine teachers',
-        //   dek: 'Designed the identity, palette, and visual system from scratch. Later applied to the product, the landing page, and printed materials.',
-        //   noteTitle: 'Note', noteBody: 'Designed by the same person doing the product and code work in the other cases.', noteTilt: -2 },
-      ],
-      compactCases: [],
-      spineSteps: ['Context','Problem','Proposal','Considerations','Decision','Result','Caveats'].map((label, i) => ({
-        label,
-        border: i === 1 ? '#B23A2E' : '#E4E2D6',
-        color: i === 1 ? '#14161F' : '#9B9A90',
-        weight: i === 1 ? 500 : 400,
-      })),
-    };
-  }
-}
-</script>
 </body>
 </html>
