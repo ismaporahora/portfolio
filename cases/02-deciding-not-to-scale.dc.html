@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case 02 · Deciding not to scale the product — Ismael Menegolla</title>
-<meta name="description" content="Six months of research and usage data on whether Planificando was working for teachers. The evidence pointed to redesigning the core flow, not scaling the current one.">
-<meta property="og:title" content="Case 02 · Deciding not to scale the product — Ismael Menegolla">
-<meta property="og:description" content="Six months of research and usage data on whether Planificando was working for teachers. The evidence pointed to redesigning the core flow, not scaling the current one.">
+<title>Case 02 · Rebuilding the core of the product without being sure — Ismael Menegolla</title>
+<meta name="description" content="Half of the people who logged in never clicked &quot;Create plan&quot;, and the data could not tell us why. Rebuilding the core flow became the cheapest available way to test whether usability was the barrier.">
+<meta property="og:title" content="Case 02 · Rebuilding the core of the product without being sure — Ismael Menegolla">
+<meta property="og:description" content="Half of the people who logged in never clicked &quot;Create plan&quot;, and the data could not tell us why. Rebuilding the core flow became the cheapest available way to test whether usability was the barrier.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Ismael Menegolla">
 <meta property="og:url" content="https://ismenegolla.vercel.app/cases/02-deciding-not-to-scale.dc.html">
@@ -34,56 +34,57 @@
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidence</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Strategic call</span>
     </div>
-    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Deciding not to scale the product</h1>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:22ch">Rebuilding the core of the product without being sure</h1>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer — research design, instruments, analysis, V2 prototype</div></div>
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Team</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 people + education specialists</div></div>
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">November 2025 – June 2026</div></div>
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Tools</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">field observation · usability tests · Mixpanel · GA4 · session replays</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product strategy, research, information architecture</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Team</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 people (only designer)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026</div></div>
   </div>
 
   <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
     <div style="display:none">
       <div style="position:sticky;top:24px">
-        <a href="#context" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Context</a>
-        <a href="#built" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What I built</a>
-        <a href="#showed" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What the data showed</a>
-        <a href="#decision" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">The decision</a>
-        <a href="#caveats" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Caveats</a>
+        <a href="#data" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What the data said</a>
+        <a href="#hypotheses" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Two hypotheses</a>
+        <a href="#why" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Why we rebuilt anyway</a>
+        <a href="#grade" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">The grade as home</a>
+        <a href="#leftout" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What we left out</a>
+        <a href="#measure" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">What we will measure</a>
       </div>
     </div>
     <div style="flex:1 1 420px;min-width:0">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">TL;DR — We spent six months measuring whether Planificando was creating real value for teachers, instead of guessing. The evidence showed initial use without sustained adoption, and located the real drop-off in a different funnel step than the team assumed. The conclusion was to redesign the core flow rather than scale the current product. That redesign (V2) is now in prototype.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">Planificando is an AI lesson-planning platform for primary-school teachers in Argentina. I am the only designer on a five-person team, and I work directly with the CEO on product decisions. This case is about one of those decisions: rebuilding the product's core flow with evidence that could not tell us whether we were right.</div>
 
-      <h2 id="context" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Context</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">By late 2025 Planificando had users but no clear picture of whether it was working. The team's stated goal for the semester: move from intuition-based validation to evidence-based validation. Measure, observe, document, learn.</p>
-
-      <h2 id="built" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What I built</h2>
-      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 40px;padding-left:20px;max-width:62ch">
-        <li style="margin-bottom:8px">The validation methodology and instruments: product-side and classroom-side, with an observation protocol for the pilot.</li>
-        <li style="margin-bottom:8px">Usability tests and field work: workshops in schools, individual tests with teachers over 50, a usability round in Vicente López, session replays.</li>
-        <li style="margin-bottom:8px">The UX report: 12 versions, crossing usage data (Aug 2025–Mar 2026), qualitative feedback, email campaigns, and analytics. Cleaned base: 189 real users, 105 active, 56% activation. 17 issues prioritized P0/P1.</li>
-      </ul>
-
-      <h2 id="showed" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What the data showed</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The board attributed the activation drop to the step between clicking "create" and generating a plan. The funnel data showed that step converts at 95.6%. The real drop, around 50%, was one step earlier: between login and clicking "create". Teachers weren't failing to generate; they weren't starting.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 18px">
-        <div style="flex:1 1 160px;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#2F6F4E">95.6%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">"create" → generate (assumed problem)</div></div>
-        <div style="flex:1 1 160px;background:#FFFDF4;border:1px solid #E9DFB0;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#B23A2E">~50%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">login → "create" (real drop)</div></div>
+      <h2 id="data" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What the data said</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Between March and June 2026, half of the people who logged in never clicked "Create plan": 113 out of 225. The ones who clicked almost always finished, with 92% reaching a completed plan. Registration data pointed the same way. 44% of registered users never generated a plan. Of 229 potential users in the database, 40% ever came back after their first day, and 30% came back and planned. Conversion from login to a finished plan had been falling for three months, from around 70% to around 45%.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">One number changed how I read all the others. Our analytics board described the problem as a 46% drop between clicking "create" and the start of generation. When I pulled the live funnel, that step converted at 95%. The real loss was one step earlier, between logging in and clicking at all. We had been repeating a wrong story about our own funnel, and I found out by extracting the data instead of trusting the board's description.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
+        <div style="flex:1 1 160px;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#2F6F4E">95%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">"create" → generation (what the board blamed)</div></div>
+        <div style="flex:1 1 160px;background:#FFFDF4;border:1px solid #E9DFB0;border-radius:8px;padding:16px 18px"><div style="font-family:Fraunces,serif;font-size:30px;font-weight:600;line-height:1;color:#B23A2E">50%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">login → "create" (the real loss — 113 of 225)</div></div>
       </div>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Combined with the qualitative evidence, the picture was consistent: teachers used the product with guidance, but organic, sustained adoption wasn't happening with the current flow.</p>
 
-      <h2 id="decision" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The decision</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">The product team's conclusion at the end of the semester was to redefine the core flow rather than scale the current version. My part in that decision was the evidence on the table: the UX report and the funnel analysis were two of the inputs the team weighed. The redesign became V2, a conversational, step-by-step generation flow. I built the first prototype (three entry points, five-step flow) in June 2026. What the redesign changed is <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">case 04</a>.</p>
+      <h2 id="hypotheses" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Two hypotheses the data could not separate</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The numbers told us teachers tried the product and did not return. They did not tell us why. We had two candidate explanations that pointed to very different responses.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The first: usability. The entry form was doing damage we could observe directly. A third of users left the "describe your class" field empty. Teachers told us the two context fields were confusing because it was unclear what each one did to the output. The topic field capped at 200 characters and teachers wanted to give more context than it allowed. In a usability session, one participant said the waiting time "seemed infinite."</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The second: bandwidth. Most of the teachers we interviewed were dealing with burnout. A product can be perfectly usable and still lose to the fact that its user has no mental room left to adopt anything new. Our research added a third layer: teachers usually arrive with a sequence already in mind and want help with a specific activity inside it, while the product produced long, dense, complete sequences. If that misalignment was the core problem, a friendlier form would not fix it.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">A redesign only addresses the first hypothesis. We knew that when we chose it.</p>
 
-      <h2 id="caveats" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Caveats</h2>
-      <ol style="font-size:15px;line-height:1.65;color:#2A2D3A;margin:0 0 0;padding-left:20px;max-width:62ch">
-        <li style="margin-bottom:10px"><b>Small base:</b> 189 users. Every number here is a directional signal, not statistical proof.</li>
-        <li style="margin-bottom:10px"><b>Fine-grained metrics</b> only exist from March 20, 2026, when Mixpanel was instrumented. Earlier conclusions rest on coarser data and qualitative work.</li>
-        <li style="margin-bottom:10px"><b>V2 is a prototype.</b> Whether the redesign fixes adoption is an open question; this case documents the decision, not its outcome.</li>
-      </ol>
+      <h2 id="why" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Why we rebuilt anyway</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Under traditional development costs, rebuilding the core of a product to test a hypothesis is not a defensible bet, and we would not have made it. What changed the math was tooling. With Claude Design for prototyping and Claude Code for implementation, the cost of building the new version dropped to the point where shipping it became the cheapest available way to test whether usability was the barrier. The decision was made as a team, with the CEO, and it included a third motive beyond the hypothesis: shedding legacy code the product had been dragging.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">The bet, stated plainly: if usability was the barrier, the new version would show it in the funnel. If it was not, we would have paid a low price to eliminate the largest variable and could look at the harder problems with cleaner data.</p>
+
+      <h2 id="grade" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The grade as home</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">My specific contribution to the new version came from the field. Since our first usability rounds in July 2025, teachers struggled to switch subjects inside the same class. By February 2026, users were ending up with duplicated grades because the product tied each grade to a single subject. In June I traced that friction to the data model itself, and <a href="03-ux-bug-data-model.dc.html" style="color:#3452D9;text-decoration:none">the fix shipped on June 17</a>: subject was decoupled from grade, because primary-school teachers do not have subjects, they have grades, and they teach several subjects to the same group.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">The new version takes that logic to its conclusion. Instead of starting from a planning form, the product now starts from <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">the grade as a workspace</a>, where the teacher sees her group's context and everything already planned for it. The form became conversational, in steps, to lower the cost of entry that the old form's empty fields were documenting week after week.</p>
+
+      <h2 id="leftout" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What we left out</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Scope was decided against what a five-person team could build and test in weeks. Subject-differentiated questions and diversification by ability level stayed out of this version. The view for school directors and supervisors was deferred to the next cycle: the reasoning was sequential, since a directors' layer has nothing to report on until teachers are actually using the product. Institutional features wait for the teacher flow to prove itself.</p>
+
+      <h2 id="measure" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">What we will measure</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The new version launches with school cohorts in the coming weeks. The two numbers that will judge the bet are the ones that motivated it: the share of logins that click "create," and the share of users who come back and plan again.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">A note on the evidence in this case</b>Our samples are small, between 27 and 229 users depending on the window, so these are directional signals, not statistics. The activation figures come from three different populations (registered users, logins, and database users), and I have kept each number with its own denominator. Several interface changes shipped together, which limits what any single release can claim. If the new version's numbers say usability was not the barrier, this case still ends well: we will have bought that answer at the lowest price available.</div>
     </div>
   </div>
 
