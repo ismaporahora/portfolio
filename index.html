@@ -62,65 +62,47 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
 
   <!-- Case cards are pre-rendered static HTML so crawlers see real content.
        Hidden brand case: cases/04-brand-for-teachers.dc.html — renumber to 05 if re-enabled. -->
-  <a href="cases/01-shipping-design-changes.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-    <div style="flex:1 1 360px;min-width:0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:24px;align-items:stretch">
+    <a href="cases/04-redesigning-the-core-flow.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:34px 36px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">01 · Process</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">01 · Craft</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped</span>
       </div>
-      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Shipping design changes directly</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Design fixes were stuck waiting on a two-person tech team. I started implementing changes myself with Claude Code, reviewed by tech before merge. One resulting change is measured below.</p>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
-    </div>
-    <div class="postit" style="flex:0 1 210px;margin-left:auto;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-      <b style="display:block;font-size:12px;margin-bottom:4px">Result</b>4 to 9 weekly uniques, sustained at 7. Small sample size.
-    </div>
-  </a>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">Rebuilding the core flow</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">Case 02 ended with a bet: rebuild the flow instead of scaling it. This is what I built, what shipped, and the first cycle of data back.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
+    </a>
 
-  <a href="cases/02-deciding-not-to-scale.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-    <div style="flex:1 1 360px;min-width:0">
+    <a href="cases/02-deciding-not-to-scale.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:34px 36px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidence</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Strategic call</span>
       </div>
-      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Rebuilding the core of the product without being sure</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Half of the people who logged in never clicked "Create plan", and the data could not tell us why. Rebuilding the core flow became the cheapest available way to test whether usability was the barrier.</p>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
-    </div>
-    <div class="postit" style="flex:0 1 210px;margin-left:auto;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-      <b style="display:block;font-size:12px;margin-bottom:4px">The bet</b>If usability was the barrier, the new version would show it in the funnel. If it was not, we would have paid a low price to eliminate the largest variable.
-    </div>
-  </a>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">Deciding not to scale the product</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">Half of the people who logged in never clicked "Create plan", and the data could not tell us why. Rebuilding the core flow became the cheapest available way to test whether usability was the barrier.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
+    </a>
 
-  <a href="cases/03-ux-bug-data-model.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-    <div style="flex:1 1 360px;min-width:0">
+    <a href="cases/01-shipping-design-changes.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:34px 36px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">03 · Systems</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">03 · Process</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped</span>
+      </div>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">Shipping design changes directly</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">Design fixes were stuck waiting on a two-person tech team. I started implementing changes myself with Claude Code, reviewed by tech before merge.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
+    </a>
+
+    <a href="cases/03-ux-bug-data-model.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:34px 36px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Systems</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Deployed 17/6</span>
       </div>
-      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">A UX bug traced to the data model</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">Teachers were seeing duplicated grades. The cause was in the data model, not the interface. Diagnosed and shipped to production.</p>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
-    </div>
-    <div class="postit" style="flex:0 1 210px;margin-left:auto;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-      <b style="display:block;font-size:12px;margin-bottom:4px">Method</b>Same decision framework I'd used for a similar problem in January.
-    </div>
-  </a>
-
-  <a href="cases/04-redesigning-the-core-flow.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-wrap:wrap;gap:28px;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:38px 40px;margin-bottom:24px;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
-    <div style="flex:1 1 360px;min-width:0">
-      <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Craft</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Prototype</span>
-      </div>
-      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;margin:0 0 12px;color:#14161F">Redesigning the core flow</h3>
-      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 20px;max-width:52ch">The evidence from case 02 pointed at the flow, not the features. I rebuilt the product around the grade: context loads once, the teacher states intent in her own words, and changes happen inside the document.</p>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9">Read the case →</span>
-    </div>
-    <div class="postit" style="flex:0 1 210px;margin-left:auto;align-self:flex-start;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-2deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)">
-      <b style="display:block;font-size:12px;margin-bottom:4px">Status</b>Prototype in validation. No usage data yet.
-    </div>
-  </a>
+      <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">A UX bug traced to the data model</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">Teachers were seeing duplicated grades. The cause was in the data model, not the interface. Diagnosed and shipped to production.</p>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
+    </a>
+  </div>
 
 </div>
 

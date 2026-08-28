@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case 04 · Redesigning the core flow — Ismael Menegolla</title>
-<meta name="description" content="The evidence from case 02 pointed at the flow, not the features. I rebuilt the product around the grade: context loads once, the teacher states intent in her own words, and changes happen inside the document.">
-<meta property="og:title" content="Case 04 · Redesigning the core flow — Ismael Menegolla">
-<meta property="og:description" content="The evidence from case 02 pointed at the flow, not the features. I rebuilt the product around the grade: context loads once, the teacher states intent in her own words, and changes happen inside the document.">
+<title>Rebuilding the core flow — Ismael Menegolla</title>
+<meta name="description" content="Rebuilding an AI lesson-planning tool around the grade instead of the form. Five design decisions, shipped, and the first cycle of usage data.">
+<meta property="og:title" content="Rebuilding the core flow — Ismael Menegolla">
+<meta property="og:description" content="Rebuilding an AI lesson-planning tool around the grade instead of the form. Five design decisions, shipped, and the first cycle of usage data.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Ismael Menegolla">
 <meta property="og:url" content="https://ismenegolla.vercel.app/cases/04-redesigning-the-core-flow.dc.html">
@@ -28,21 +28,21 @@
 <div data-screen-label="Case 04" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
   <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
     <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
-    <span>Case 04 / 04</span>
+    <span>Case 01 / 04</span>
   </div>
 
   <div style="margin-bottom:34px">
     <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Craft</span>
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Prototype · 2026</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">01 · Craft</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped · 2026</span>
     </div>
-    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Redesigning the core flow</h1>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Rebuilding the core flow</h1>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
     <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Role</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer — all design and UX decisions</div></div>
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026</div></div>
-    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Status</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Working prototype — not shipped, no usage data</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Timeline</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026 · shipped between 15 July and 5 August</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Status</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Live at v2.planificando.tech · instrumented since 11 Aug 2026</div></div>
   </div>
 
   <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
@@ -53,23 +53,28 @@
         <a href="#d2" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 2</a>
         <a href="#d3" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 3</a>
         <a href="#d4" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 4</a>
+        <a href="#d5" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Decision 5</a>
         <a href="#waiting" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Waiting screen</a>
         <a href="#status" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Status</a>
       </div>
     </div>
     <div style="flex:1 1 420px;min-width:0">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">Where this started — Case 02 ended with a bet: rebuild the core flow to test whether usability was the barrier. This case is what the redesign changed. I prototyped V2 and wrote each change as a decision: what V1 did, what the evidence said, what I chose.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">V1 was a form that asked the same questions every week and forgot the answers. I redesigned the product around the grade, wrote each change as a decision, and shipped it. This case is those decisions and the first cycle of data back. The evidence that made the rebuild the right call is <a href="02-deciding-not-to-scale.dc.html" style="color:#3452D9;text-decoration:none">case 02</a>.</div>
 
       <h2 id="starting" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The starting point</h2>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 was a form. The teacher selected a grade, described the topic, retyped what her students knew, picked a class count from a bare dropdown, and waited about 30 seconds for a document. Every generation started from zero. The plan list filled with near-duplicates because regenerating was the only way to iterate.</p>
 
       <h2 id="d1" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 1 · The grade became the workspace</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 organized the app around the generator; grades, plans and texts were parallel menu sections. In V2 each grade is a space: the home screen is the grade, plans live inside it, and the app opens where the teacher works. The unit of a teacher's work is the group, not the document.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">V1 organized the app around the generator: grades, plans and texts were parallel menu sections. In V2 each grade is a space. The home screen is the grade, plans live inside it, and the app opens where the teacher works.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The pedagogical team wanted the opposite: a grade picker as the landing screen, on the reasoning that a teacher should choose her group before anything else. It is a defensible model and it is how the curriculum is organized.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The distribution argued against it. Of the teachers with an active grade, 82% have exactly one. A picker would be a screen most teachers pass through with a single option on it.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">What made the argument was not the average. Counting everyone, including our own team holding dozens of test grades, the figure is ambiguous enough for the picker to win. Excluding the team, it is not close. The decision turned on segmenting the data, not on having it.</p>
       <!-- Remaining image blocks hidden until assets are dropped into assets/. To re-enable: uncomment each block and change the preceding paragraph's margin back from 40px to 18px. -->
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin:-22px 0 40px">
         <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d1-before.png" alt="V1 — the generation form: grade, topic, student context and class count asked up front" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;position:relative;cursor:zoom-in;transform-origin:left center;transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease" style-hover="transform:scale(1.9);z-index:20;box-shadow:0 24px 60px rgba(20,22,31,0.30)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1 — the app opens on a form</div></div>
         <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d1-after.png" alt="V2 — the grade as the workspace: 2° A with its context and recent plans" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;position:relative;cursor:zoom-in;transform-origin:right center;transition:transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease" style-hover="transform:scale(1.9);z-index:20;box-shadow:0 24px 60px rgba(20,22,31,0.30)"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V2 — the app opens on the grade</div></div>
       </div>
+      <div style="width:240px;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12);margin:0 0 40px"><b style="display:block;font-size:12px;margin-bottom:4px">Where I could be wrong</b>This is a snapshot of a product a few months old. If teachers turn out to manage several grades across school years, the picker becomes the right screen. The data says what is true now.</div>
 
       <h2 id="d2" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 2 · Context became something the product keeps</h2>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 asked "¿Qué conocen tus estudiantes sobre el tema?" on every generation and discarded the answer. V2 stores a description of the group per grade — free text, in the teacher's words, plus files like student lists — and uses it for every plan. The empty state says why it's worth loading: "para que cada planificación salga a la medida."</p>
@@ -90,7 +95,8 @@
       -->
 
       <h2 id="d4" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 4 · Iteration moved inside the document</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 had a separate edit mode and no way to ask for changes; iterating meant generating again. In V2 the plan itself is editable in place, and a "¿Qué cambiamos?" panel takes change requests — with suggested changes as chips, so the teacher learns what kinds of adjustments are possible.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">V1 had a separate edit mode and no way to ask for changes; iterating meant generating again, which is why the plan list filled with near-duplicates. In V2 the plan is editable in place, and a "¿Qué cambiamos?" panel takes change requests, with suggested changes as chips so the teacher learns what kinds of adjustments are possible.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Whether it displaced regeneration, I can't say yet. The panel fires a single event with no properties, and I can't tell from the data whether a change request and a regeneration are two acts or two names for the same one. That is an instrumentation gap of my own making, and it is first on the list to fix.</p>
       <!--
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
         <div style="flex:1 1 240px;min-width:0"><img src="../assets/case04-d4-before.jpg" alt="V1 — separate edit mode, no change requests" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
@@ -98,20 +104,32 @@
       </div>
       -->
 
+      <h2 id="d5" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decision 5 · The wait became where context gets captured</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Decision 2 gave the product a place to keep context. It did not make teachers write it: in the version we tested in schools, six of seven plans left the context field blank. It was the last thing between the teacher and the result she came for, so she skipped it.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The obvious fix is better microcopy, or examples, or a friendlier placeholder. I moved the question instead.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Generating a plan takes close to a minute, and the teacher spends it watching a progress bar. So the question appears there now, one at a time, with three options and a free-text field. The screen states that the answer will not change the plan being generated: it feeds the group's context, which is what the next plan reads from. Answering is optional, the plan can arrive mid-question, and answered questions do not repeat.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 24px;max-width:62ch">45 teachers answered at least one question, with a median of 5 answers each.</p>
+      <div style="width:240px;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12);margin:0 0 40px"><b style="display:block;font-size:12px;margin-bottom:4px">What the options taught me</b>Given "Sí / A medias / Todavía no", the middle option is the most chosen. The binary version of this question, which is what V1 asked, had no way to hold that answer.</div>
+
       <h2 id="waiting" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">How the waiting screen was explored</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 shows a checklist and a progress bar for about 30 seconds. The exploration compared combinable variants — streaming the plan as it writes, tips, curriculum grounding, skeleton screens, personalization signals — and streaming was the direction chosen, because the wait shrinks when the result is visible while it builds.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">V1 showed a checklist and a progress bar. The exploration compared combinable variants: streaming the plan as it writes, tips, curriculum grounding, skeleton screens, personalization signals. What shipped kept the progress bar and turned the wait into the place where the product asks for context.</p>
       <!--
       <div style="margin:0 0 40px"><img src="../assets/case04-exploration-espera.jpg" alt="Waiting screen exploration — combinable variants compared" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"></div>
       -->
 
       <h2 id="status" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Status</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0;max-width:62ch">V2 is a working prototype. It has not shipped and there is no usage data. The decisions above are hypotheses the evidence from case 02 supports; validation with teachers is the next step.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">V2 is live at v2.planificando.tech and has been instrumented since 11 August 2026. The first measured window covers 18 days: 82 new accounts, 64 of which created a grade, 51 of which generated at least one plan, and 28 of which exported one.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Adoption is concentrated. One institutional agreement accounts for most of the use, and accounts that arrive without an institution behind them activate at well under half that rate. Every percentage here should be read with that in mind.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Before writing this I audited the instrumentation behind these numbers, and a meaningful share of it did not survive. The skip-rate I was about to quote turned out to be almost entirely our own team's test accounts. The usage figures for the context questions included the team and had to be recomputed. Our dashboard's generation time measures the backend request rather than the wait a teacher actually sits through, which I found by timing it myself rather than by reading the board. Several decisions above have no number at all, because the event that would measure them was never instrumented.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">One number did survive and points somewhere I did not expect: 92% of plans start from a topic the teacher typed, not one picked from the indexed curriculum. We index the curriculum and wrote 488 short classroom-language phrases from it, and teachers still write their own. That is the next problem.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 24px;max-width:62ch">Whether the accumulated context makes the next plan better is the question the whole redesign rests on, and it is still open.</p>
+      <div style="width:240px;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12);margin:0"><b style="display:block;font-size:12px;margin-bottom:4px">Caveat</b>Tens of teachers over 18 days, with adoption concentrated in one institutional agreement. Directional signal, not statistics.</div>
     </div>
   </div>
 
   <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
-    <a href="03-ux-bug-data-model.dc.html" style="color:#6B6A63;text-decoration:none">← A UX bug traced to the data model</a>
-    <a href="../index.html" style="color:#3452D9;text-decoration:none">Back to all cases →</a>
+    <a href="../index.html" style="color:#6B6A63;text-decoration:none">← All cases</a>
+    <a href="02-deciding-not-to-scale.dc.html" style="color:#3452D9;text-decoration:none">Next: Deciding not to scale the product →</a>
   </div>
 </div>
 
