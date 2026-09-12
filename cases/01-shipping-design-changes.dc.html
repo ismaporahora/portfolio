@@ -53,7 +53,7 @@
         <a href="#problem" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Problem</a>
         <a href="#method" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Method change</a>
         <a href="#shipped" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">What shipped</a>
-        <a href="#measured" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">The change</a>
+        <a href="#measured" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">One change</a>
       </div>
     </div>
     <div style="flex:1 1 420px;min-width:0">
@@ -85,7 +85,6 @@
         <li style="margin-bottom:8px">The waiting screen: replaced a spinner with 11 rotating pedagogical tips and a progress bar.</li>
         <li style="margin-bottom:8px">The editing screen: clear hierarchy, pill buttons, inline title editing.</li>
         <li style="margin-bottom:8px">A diff view for "Request changes": word-level highlights of what the AI changed, a side panel with three states, "Undo all".</li>
-        <li style="margin-bottom:8px">Feedback: replaced a star rating that interrupted after actions like downloading or sharing with a persistent bubble and an open text field — a change in what kind of data comes in, not just where the control sits.</li>
         <li style="margin-bottom:8px">Smaller fixes: destructive actions in red, filters in "My plans", a two-column login, fixed toolbar.</li>
       </ul>
 
@@ -94,9 +93,9 @@
         <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">The diff view that shipped with the rename: the teacher's request at the top, a checked summary of every section the AI touched, and word-level highlights in the plan itself.</figcaption>
       </figure>
 
-      <h2 id="measured" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">The change in detail: "Regenerate" → "Request changes"</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The regeneration feature lets teachers ask the AI to modify a generated plan. Usage data and field observation showed it was underused: the ratio of regenerations to generations was 0.14 in organic use versus 0.86 when teachers had live guidance in workshops. Teachers didn't understand what "Regenerate" meant, or feared losing their work.</p>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;border-left:3px solid #2F6F4E;padding:4px 0 4px 16px;margin:0 0 22px;max-width:62ch"><b style="display:block;margin-bottom:6px;color:#14161F">Shipped May 13, 2026</b>Renamed the action to "Pedir cambios" (Request changes), the phrase teachers used when describing what they wanted. Added onboarding explaining what the feature does and that nothing is lost.</div>
+      <h2 id="measured" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">One change in detail: "Regenerate" → "Request changes"</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The regeneration feature lets teachers ask the AI to modify a plan it just generated. In the months before the change it was barely being found: 20% of teachers who created a plan ever used it, at a ratio of 0.31 requests per plan. Field observation pointed at two causes — teachers didn't know what "Regenerate" meant, and they were unsure whether asking for a change would cost them the version they already had.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;border-left:3px solid #2F6F4E;padding:4px 0 4px 16px;margin:0 0 22px;max-width:62ch"><b style="display:block;margin-bottom:6px;color:#14161F">Shipped May 13, 2026</b>Renamed the action to "Pedir cambios" (Request changes), the phrase teachers themselves used when describing what they wanted. Added onboarding explaining what the feature does and that nothing is lost.</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin:0 0 10px;max-width:540px">
         <div style="background:#FBFAF6;padding:16px 16px 14px">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B23A2E;margin-bottom:10px">Before — "Regenerar"</div>
@@ -109,9 +108,21 @@
       </div>
       <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin:0 0 40px;max-width:540px">The same modal before and after May 13. Beyond the verb, the redesign moved the modal to the unified palette and dropped the ambiguous "regenerate" icon.</p>
 
+      <h3 style="font-family:Fraunces,serif;font-size:18px;font-weight:600;margin:34px 0 14px">Result</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">In the 30 days before the change, 19% of teachers who created a plan used the feature (10 of 53). In the 30 days after, 41% did (24 of 59), holding at 44% the following month. The ratio of requests per plan doubled, 0.31 to 0.62.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The lift was adoption, not intensity. Teachers who already used the feature averaged 3.5 requests each, before and after. The rename didn't make anyone iterate more — it brought in people who weren't using it at all. Which is exactly what a naming fix should do, and a useful limit on what to claim for it.</p>
+
+      <h3 style="font-family:Fraunces,serif;font-size:18px;font-weight:600;margin:34px 0 14px">What it didn't fix</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The onboarding said nothing would be lost. Teachers didn't believe it.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Reading what they actually wrote in the request field, 70% of consecutive requests from the same teacher contained the previous request in full — up from 49% before the change. Each round they re-pasted their entire list of edits and appended the new one. The longest ran to 16,000 characters.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Two things in the code made that painful to read. Every version stored a pointer to the one before it, so the original was never lost — 431 of 431 times. And the system already passed the previous request to the model automatically. The product was non-destructive and it had memory. It just never said so, so teachers did the remembering by hand.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The rename brought more people into a flow that was still asking them to work around it. That's what sent the interaction itself back to the drawing board: in <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:underline">V2</a> a request is anchored to the fragment you want changed, with your earlier requests visible. Re-sending there is zero, across 93 consecutive requests.</p>
+
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:26px 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Caveats</b>The May 13 release was bundled — the rename shipped alongside library workflow changes and UI polish, so the adoption lift can't be attributed to the naming in isolation. The numbers are small (10 teachers to 24) and directional, not significant. Figures come from the production database with team accounts removed. The series stops in mid-July: after that, winter recess and the V2 migration make the comparison meaningless.</div>
+
       <div style="border-top:1px solid #E4E2D6;padding-top:24px;max-width:62ch">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:10px">Closing</div>
-        <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0">The rename is a small UX-writing story. The larger change is throughput: the evidence for most of these fixes had existed for months, waiting on a queue that never cleared. For a small team, a designer who can ship, with review and within scope, changes the economics of iteration.</p>
+        <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0">The rename is a small UX-writing story with an honest ceiling: it fixed discovery and nothing else. The larger change is throughput. The evidence for most of these fixes had existed for months, waiting on a queue that never cleared. For a small team, a designer who can ship — with review, within scope — changes the economics of iteration.</p>
       </div>
     </div>
   </div>
