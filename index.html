@@ -58,12 +58,12 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
   <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:16px">
     <h2 style="font-family:Fraunces,serif;font-weight:600;font-size:28px;margin:0;color:#14161F">Case studies</h2>
     <div style="max-width:44ch;text-align:right">
-      <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.55;color:#9B9A90;margin:0">Four cases from 18 months at Planificando, an AI lesson-planning tool for Argentine primary teachers.</p>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.55;color:#9B9A90;margin:0">Five cases from 18 months at Planificando, an AI lesson-planning tool for Argentine primary teachers.</p>
     </div>
   </div>
 
   <!-- Case cards are pre-rendered static HTML so crawlers see real content.
-       Hidden brand case: cases/04-brand-for-teachers.dc.html — renumber to 05 if re-enabled. -->
+       Hidden brand case: cases/04-brand-for-teachers.dc.html — superseded by case 05; renumber to 06 if re-enabled. -->
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:24px;align-items:stretch">
     <a href="cases/04-redesigning-the-core-flow.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
       <div style="height:180px;background:#FBFAF4;background-image:repeating-linear-gradient(135deg,rgba(20,22,31,0.03) 0 1px,transparent 1px 10px);border-bottom:1px solid #E4E2D6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
@@ -165,6 +165,35 @@ body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-
         </div>
         <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">A UX bug traced to the data model</h3>
         <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">Teachers were seeing duplicated grades. The cause was in the data model, not the interface. Diagnosed and shipped to production.</p>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
+      </div>
+    </a>
+
+    <a href="cases/05-design-system-in-code.dc.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(20,22,31,0.03);transition:transform .18s ease, box-shadow .18s ease" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(20,22,31,0.09)">
+      <div style="height:180px;background:#FBFAF4;background-image:repeating-linear-gradient(135deg,rgba(20,22,31,0.03) 0 1px,transparent 1px 10px);border-bottom:1px solid #E4E2D6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+        <div style="display:flex;align-items:center;gap:14px;transform:rotate(-0.7deg)">
+          <div style="display:grid;grid-template-columns:repeat(2,22px);gap:6px">
+            <div style="height:22px;background:#14161F;border-radius:3px"></div>
+            <div style="height:22px;background:#F5D563;border:1.5px solid #14161F;border-radius:3px;box-sizing:border-box"></div>
+            <div style="height:22px;background:#DCD9CB;border-radius:3px"></div>
+            <div style="height:22px;background:#FFFFFE;border:1.5px solid #DCD9CB;border-radius:3px;box-sizing:border-box"></div>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;color:#14161F">→</span>
+          <div style="width:78px;border:1.5px solid #14161F;border-radius:6px;background:#FFFFFE;padding:8px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px">
+            <div style="height:4px;width:70%;background:#DCD9CB;border-radius:2px"></div>
+            <div style="height:4px;background:#DCD9CB;border-radius:2px"></div>
+            <div style="height:14px;width:46px;background:#F5D563;border:1.5px solid #14161F;border-radius:4px;box-sizing:border-box;align-self:flex-end;margin-top:2px"></div>
+          </div>
+        </div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;color:#6B6A63">the rules live in the repo</span>
+      </div>
+      <div style="padding:30px 34px 34px;display:flex;flex-direction:column;flex:1">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">05 · Brand</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Shipped</span>
+        </div>
+        <h3 style="font-family:Fraunces,serif;font-weight:600;font-size:25px;line-height:1.22;margin:0 0 12px;color:#14161F">Carrying the brand into code</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#2A2D3A;margin:0 0 22px">I redesigned Planificando's brand, then wrote it into the V2 repository as tokens and shared components. Every specimen on the page is rebuilt from that code.</p>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#3452D9;margin-top:auto">Read the case →</span>
       </div>
     </a>
