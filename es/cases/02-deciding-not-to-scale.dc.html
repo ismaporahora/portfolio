@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decidir no escalar el producto — Ismael Menegolla</title>
+<meta name="description" content="El equipo explicaba el bajo uso como un problema de relevancia. Los datos decían otra cosa, y se reconstruyó el flujo central.">
+<meta property="og:title" content="Decidir no escalar el producto — Ismael Menegolla">
+<meta property="og:description" content="El equipo explicaba el bajo uso como un problema de relevancia. Los datos decían otra cosa, y se reconstruyó el flujo central.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ismael Menegolla">
+<meta property="og:url" content="https://ismenegolla.vercel.app/es/cases/02-deciding-not-to-scale.dc.html">
+<meta property="og:image" content="https://ismenegolla.vercel.app/assets/case02-grade-home.png">
+<meta property="og:image:width" content="2480">
+<meta property="og:image:height" content="1416">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="https://ismenegolla.vercel.app/cases/02-deciding-not-to-scale.dc.html">
+<link rel="alternate" hreflang="es" href="https://ismenegolla.vercel.app/es/cases/02-deciding-not-to-scale.dc.html">
+<link rel="alternate" hreflang="x-default" href="https://ismenegolla.vercel.app/cases/02-deciding-not-to-scale.dc.html">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 02" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span>Caso 02 / 05 · <a href="/cases/02-deciding-not-to-scale.dc.html" hreflang="en" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">EN</a> / <span style="color:#14161F">ES</span></span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidencia</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Decisión estratégica</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:22ch">Decidir no escalar el producto</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Rol</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Estrategia de producto, investigación, arquitectura de la información</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Equipo</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 personas (único diseñador)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Período</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#data" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">La explicación que teníamos</a>
+        <a href="#datachanged" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Lo que cambiaron los datos</a>
+        <a href="#hypotheses" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Dos hipótesis</a>
+        <a href="#why" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Por qué reconstruimos de todos modos</a>
+        <a href="#grade" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">El grado como pantalla de inicio</a>
+        <a href="#leftout" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Lo que dejamos fuera</a>
+        <a href="#measure" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Lo que dejó la apuesta</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">Planificando es una plataforma con IA para que docentes de primaria de Argentina planifiquen sus clases. Soy el único diseñador de un equipo de cinco personas y trabajo directamente con el CEO en las decisiones de producto. Este caso trata de cómo cambiamos nuestra explicación de por qué no se usaba el producto, y de la decisión de reconstruir el flujo central en lugar de escalarlo. Ese rediseño llegó a producción como la V2; lo que cambió, y los primeros datos de uso, están en el <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">caso 01</a>.</div>
+
+      <h2 id="data" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">La explicación que teníamos</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Durante mucho tiempo, el equipo leyó el bajo uso del producto como un problema de relevancia: las docentes no planificaban con él porque lo que generaba no se acercaba lo suficiente a lo que realmente necesitaban. Esa lectura tiene una consecuencia concreta: si el producto no es pertinente, no se rediseña, sino que se replantea qué es.</p>
+      <figure style="margin:0 0 26px">
+        <img src="/assets/case02-v1-uso-diario.webp" alt="Gráfico de líneas de las secuencias didácticas creadas por día en la V1, de agosto de 2025 a marzo de 2026: un pico de 65 en el lanzamiento y luego siete meses en general entre una y cinco por día, con un pico breve de 23 a fines de febrero" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V1, siete meses: 247 planificaciones de 212 docentes, sin contar 22 cuentas del equipo y de prueba. Noventa y cuatro de ellas nunca hicieron ninguna.</figcaption>
+      </figure>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">No me convencía, y no estaba dispuesto a comprometerme con un rediseño por intuición. Lo que teníamos era un recuento: un informe extraído de la base de datos que nos decía lo poco que se usaba el producto, y nada sobre dónde se detenían las docentes. El tracking instalado en el producto había registrado unas pocas decenas de eventos en siete meses. Antes de diseñar nada, pedí analítica de producto que pudiera responder la segunda pregunta, y hasta que llegó, todas las explicaciones que había sobre la mesa siguieron siendo historias que nos contábamos a nosotros mismos.</p>
+
+      <h2 id="datachanged" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Lo que cambiaron los datos</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Con la instrumentación en marcha, el problema cambió de forma. Entre marzo y junio de 2026, la mitad de las personas que iniciaron sesión nunca hicieron clic en "Crear planificación": 113 de 225. Alrededor del 40% volvió después de su primer día, y el 30% volvió y planificó. La conversión de inicio de sesión a planificación terminada llevaba tres meses cayendo, de alrededor del 70% a alrededor del 45%.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Las docentes llegaban y no planificaban. Ese no es el patrón de un producto que nadie quiere: es el patrón de un producto al que la gente no logra entrar. Sostuve que la barrera era la usabilidad, en contra de la lectura con la que venía trabajando el equipo, y que reconstruir el flujo de entrada era la manera de ponerlo a prueba.</p>
+
+      <h2 id="hypotheses" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Dos hipótesis que los datos no podían distinguir</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Los números nos decían que las docentes probaban el producto y no volvían. No nos decían por qué. Teníamos dos explicaciones posibles, y apuntaban a respuestas muy distintas.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La primera: la usabilidad. El formulario de entrada causaba problemas que podíamos observar directamente. Un tercio de los usuarios dejaba vacío el campo para describir al grupo. Las docentes nos dijeron que los dos campos de contexto resultaban confusos porque no quedaba claro qué efecto tenía cada uno en el resultado. El campo del tema tenía un límite de 200 caracteres, y las docentes querían dar más contexto del que permitía. En una sesión de usabilidad, una participante dijo que el tiempo de espera "parecía infinito".</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La segunda: el margen mental. La mayoría de las docentes que entrevistamos estaba lidiando con el burnout. Un producto puede ser perfectamente usable y aun así perder ante el hecho de que a quien lo usa ya no le queda espacio mental para adoptar nada nuevo. Nuestra investigación sumó una tercera capa: las docentes suelen llegar con una secuencia ya pensada y quieren ayuda con una actividad concreta dentro de ella, mientras que el producto generaba secuencias largas, densas y completas. Si ese desajuste era el problema de fondo, un formulario más amigable no lo resolvería.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Un rediseño solo aborda la primera hipótesis. Lo sabíamos cuando lo elegimos.</p>
+
+      <h2 id="why" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Por qué reconstruimos de todos modos</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Con costos de desarrollo tradicionales, reconstruir el núcleo de un producto para poner a prueba una hipótesis no es una apuesta defendible, y no la habríamos hecho. Lo que cambió las cuentas fueron las herramientas. Con Claude Design para prototipar y Claude Code para implementar, el costo de construir la nueva versión bajó hasta el punto de que llevarla a producción se volvió la forma más barata a nuestro alcance de comprobar si la barrera era la usabilidad. La decisión se tomó en equipo, con el CEO, e incluyó un tercer motivo además de la hipótesis: deshacernos del código heredado que el producto venía arrastrando.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">La apuesta, dicha sin rodeos: si la barrera era la usabilidad, la nueva versión lo mostraría en la cantidad de docentes que llegaran a una primera planificación. Si no lo era, habríamos pagado un precio bajo por eliminar la mayor variable y podríamos mirar los problemas más difíciles con datos más limpios.</p>
+
+      <h2 id="grade" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">El grado como pantalla de inicio</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Mi aporte concreto a la nueva versión salió del trabajo de campo. Desde nuestras primeras rondas de usabilidad, en julio de 2025, a las docentes les costaba cambiar de materia dentro de un mismo grupo. Para febrero de 2026, los usuarios terminaban con grados duplicados porque el producto ataba cada grado a una sola materia. En junio identifiqué que esa fricción venía del propio modelo de datos, y <a href="03-ux-bug-data-model.dc.html" style="color:#3452D9;text-decoration:none">la corrección llegó a producción el 17 de junio</a>: la materia se desacopló del grado, porque una docente de primaria no tiene materias, sino grados, y enseña varias materias al mismo grupo.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">La nueva versión lleva esa lógica hasta sus últimas consecuencias. En lugar de empezar por un formulario de planificación, el producto ahora empieza por <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">el grado como espacio de trabajo</a>, donde la docente ve el contexto de su grupo y todo lo que ya se planificó para él. El formulario pasó a ser conversacional, por pasos, para reducir el costo de entrada que los campos vacíos del formulario anterior venían registrando semana tras semana.</p>
+      <figure style="margin:0 0 26px">
+        <img src="/assets/case02-grade-home.png" alt="La nueva pantalla de inicio: el grado 2° A como espacio de trabajo, con el contexto del grupo cargado, un prompt conversacional y las planificaciones recientes debajo" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">La nueva pantalla de inicio: la docente llega a su grado, no a un formulario. El contexto del grupo ya está cargado, y la planificación parte de un único prompt, escrito con sus propias palabras.</figcaption>
+      </figure>
+
+      <h2 id="leftout" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Lo que dejamos fuera</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">El alcance se definió en función de lo que un equipo de cinco personas podía construir y probar en semanas. Las preguntas diferenciadas por materia y la diversificación por nivel de desempeño quedaron fuera de esta versión. La vista para directores de escuela y supervisores se postergó al siguiente ciclo: el razonamiento fue secuencial, ya que una capa para directores de escuela no tiene sobre qué informar hasta que las docentes estén usando realmente el producto. Las funciones institucionales esperan a que el flujo docente demuestre lo que vale.</p>
+
+      <h2 id="measure" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Lo que dejó la apuesta</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La V2 llegó a producción en agosto y funcionó en paralelo con la V1 durante un mes, lo que hizo posible una comparación: una cohorte de usuarios recién registrados, y si completan una primera planificación en sus primeros siete días.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Según esa medida, la activación pasó del 33% al 43%. La cifra se sostiene porque la activación de la propia V1 fue estable en tres ventanas distintas —35%, 37%, 33%—, y eso es lo que distingue este resultado de una variación estacional. Las docentes también regresaron: la proporción de las que volvieron a planificar en otro día pasó del 15% al 49%.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La objeción obvia es que la V2 heredó usuarios con experiencia. No fue eso lo que sostuvo el resultado: 48 de las 75 docentes de la V2 nunca habían planificado en la V1, y promedian 2,31 planificaciones cada una, frente al 1,39 de la V1.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La usabilidad era una barrera real. No era la única, y esto nunca fue un experimento controlado: las dos versiones funcionaron en paralelo, con la adquisición repartida entre ellas, no asignada al azar.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Una nota sobre la comparabilidad</b>En la mayoría de los aspectos, la V1 y la V2 no miden de la misma forma. El evento de generación de la V2 se dispara en tres modos y tres estados, mientras que el de la V1 se disparaba en uno solo, lo que infla 2,2 veces una comparación directa. El panel de administración de la V1 cuenta cada regeneración como una planificación; el de la V2, no. Y los dos proyectos de Mixpanel se desvían de la base de datos en direcciones opuestas, así que mezclar fuentes da el número que uno quiera. Las afirmaciones anteriores sobrevivieron a esa auditoría; varias otras que esperaba hacer, no.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Una nota sobre la evidencia de este caso</b>Nuestras muestras son pequeñas, de entre 27 y 229 usuarios según la ventana, por lo que son señales de tendencia, no evidencia estadística. Las cifras de activación vienen de dos poblaciones distintas —las 225 personas que iniciaron sesión y 229 usuarios de la base de datos—, así que los números de inicio de sesión y los de retorno no comparten denominador. Varios cambios de interfaz salieron a producción juntos, lo que limita lo que puede atribuirse a cualquier lanzamiento por separado.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="04-redesigning-the-core-flow.dc.html" style="color:#6B6A63;text-decoration:none">← Reconstruir el flujo central</a>
+    <a href="01-shipping-design-changes.dc.html" style="color:#3452D9;text-decoration:none">Siguiente: Cambios de diseño directo a producción →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
