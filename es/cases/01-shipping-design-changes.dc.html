@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cambios de diseño directo a producción — Ismael Menegolla</title>
+<meta name="description" content="Un diseñador que implementa cambios de frontend directamente con Claude Code, con revisión del equipo técnico antes del merge. En dos meses se despejaron seis meses de arreglos pendientes.">
+<meta property="og:title" content="Cambios de diseño directo a producción — Ismael Menegolla">
+<meta property="og:description" content="Un diseñador que implementa cambios de frontend directamente con Claude Code, con revisión del equipo técnico antes del merge. En dos meses se despejaron seis meses de arreglos pendientes.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ismael Menegolla">
+<meta property="og:url" content="https://ismenegolla.vercel.app/es/cases/01-shipping-design-changes.dc.html">
+<meta property="og:image" content="https://ismenegolla.vercel.app/assets/case01-pedir-cambios-after.png">
+<meta property="og:image:width" content="830">
+<meta property="og:image:height" content="772">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="https://ismenegolla.vercel.app/cases/01-shipping-design-changes.dc.html">
+<link rel="alternate" hreflang="es" href="https://ismenegolla.vercel.app/es/cases/01-shipping-design-changes.dc.html">
+<link rel="alternate" hreflang="x-default" href="https://ismenegolla.vercel.app/cases/01-shipping-design-changes.dc.html">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 01" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span>Caso 03 / 05 · <a href="/cases/01-shipping-design-changes.dc.html" hreflang="en" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">EN</a> / <span style="color:#14161F">ES</span></span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">03 · Proceso</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>En producción</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Cambios de diseño directo a producción</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Rol</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Diseñador de producto: investigación, diseño de interacción, UX writing, implementación de frontend</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Equipo</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 personas (2 de perfil técnico)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Período</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Abril–junio de 2026</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Herramientas</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Figma · Claude Code · Mixpanel · grabaciones de sesión</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#context" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Contexto</a>
+        <a href="#problem" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Problema</a>
+        <a href="#method" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Cambio de método</a>
+        <a href="#shipped" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Lo que llegó a producción</a>
+        <a href="#measured" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Un cambio</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">En resumen — En Planificando, la entrega a desarrollo era un cuello de botella para los cambios de diseño: cada arreglo debía pedirse a un equipo técnico de dos personas, y la mayoría nunca llegaba a producción. Cambié el método de trabajo: pasé a diseñar e implementar directamente los cambios de frontend con Claude Code, con revisión del equipo técnico antes del merge. En dos meses, eso despejó seis meses de arreglos de UX pendientes. Uno de esos cambios fue renombrar "Regenerar" como "Pedir cambios" y agregar un onboarding.</div>
+
+      <h2 id="context" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Contexto</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Planificando genera secuencias didácticas para docentes de primaria de Argentina. El equipo es de cinco personas, dos de ellas de perfil técnico. Estoy a cargo de todo el diseño: la UX del producto, el UX writing, la marca y la landing.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">A comienzos de 2026 ya sabíamos qué no funcionaba. Un informe de usabilidad que elaboré a partir de observación de campo, grabaciones de sesión y analítica había identificado 17 problemas de UX, priorizados como P0/P1. El problema era llevar los arreglos a producción.</p>
+
+      <h2 id="problem" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">El problema</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Cada cambio de interfaz seguía el mismo camino: yo lo diseñaba, escribía un ticket y esperaba. Con un equipo técnico de dos personas concentrado en la calidad del modelo y en la infraestructura, los tickets de diseño solían quedar relegados. Los detalles se perdían en el traspaso. Algunos arreglos esperaron meses; el rediseño de la interfaz hecho un año antes había quedado congelado casi por completo.</p>
+
+      <h2 id="method" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">El cambio de método</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 16px;max-width:62ch">En abril de 2026 dejé de pedir cambios y empecé a implementarlos.</p>
+      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 16px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:8px">Claude Code con una skill propia, creada para la base de código de Planificando, de modo que la implementación siga las convenciones del proyecto.</li>
+        <li style="margin-bottom:8px">Diseño e implemento directamente los cambios de frontend: UX writing, ajustes visuales, layout, pantallas nuevas.</li>
+        <li style="margin-bottom:8px">El equipo técnico revisa cada PR antes del merge.</li>
+      </ul>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Para ser preciso sobre lo que esto es y lo que no es: no soy desarrollador. Soy un diseñador que puede llevar un cambio de Figma a un pull request revisado. El backend, el modelo de datos y la infraestructura siguen en manos del equipo técnico.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Los cambios de la V2 del <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">caso 01</a> salieron de este mismo método de trabajo.</p>
+
+      <h2 id="shipped" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 8px;scroll-margin-top:24px">Lo que llegó a producción</h2>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9B9A90;margin-bottom:16px">Mayo–junio de 2026</div>
+      <ul style="font-size:15.5px;line-height:1.65;color:#2A2D3A;margin:0 0 40px;padding-left:20px;max-width:62ch">
+        <li style="margin-bottom:8px">Una biblioteca de textos para Lengua: una página nueva con filtros (género, extensión, grado) y la selección de textos integrada en el flujo de planificación.</li>
+        <li style="margin-bottom:8px">"Regenerar" pasó a llamarse "Pedir cambios", y se agregó un onboarding (detallado más abajo).</li>
+        <li style="margin-bottom:8px">Un sistema de diseño unificado en el código: una sola paleta, íconos coherentes, componentes compartidos.</li>
+        <li style="margin-bottom:8px">La pantalla de espera: un indicador de carga reemplazado por 11 consejos pedagógicos rotativos y una barra de progreso.</li>
+        <li style="margin-bottom:8px">La pantalla de edición: jerarquía clara, botones tipo píldora, edición del título en línea.</li>
+        <li style="margin-bottom:8px">Una vista de diferencias para "Pedir cambios": resaltado palabra por palabra de lo que cambió la IA, un panel lateral con tres estados, "Deshacer todo".</li>
+        <li style="margin-bottom:8px">Arreglos menores: acciones destructivas en rojo, filtros en "Mis planificaciones", un inicio de sesión en dos columnas, barra de herramientas fija.</li>
+      </ul>
+
+      <figure style="margin:0 0 40px;max-width:540px">
+        <img src="/assets/case03-v1-diff.webp" alt="La vista de diferencias de &quot;Pedir cambios&quot;: la planificación a la izquierda, con la edición de la IA resaltada en verde, y un panel lateral con el pedido de la docente y una lista de todas las secciones que cambiaron, cada una con una marca de verificación" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">La vista de diferencias que llegó a producción junto con el cambio de nombre: el pedido de la docente arriba, un resumen con una marca de verificación en cada sección que tocó la IA y el resaltado palabra por palabra en la propia planificación.</figcaption>
+      </figure>
+
+      <h2 id="measured" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Un cambio en detalle: "Regenerar" → "Pedir cambios"</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La función de regeneración permite que la docente le pida a la IA que modifique una planificación recién generada. En los meses previos al cambio, apenas se descubría: el 20% de las docentes que crearon una planificación llegó a usarla alguna vez, con una proporción de 0,31 pedidos por planificación. La observación de campo apuntaba a dos causas: las docentes no sabían qué significaba "Regenerar", y no estaban seguras de si pedir un cambio les haría perder la versión que ya tenían.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;border-left:3px solid #2F6F4E;padding:4px 0 4px 16px;margin:0 0 22px;max-width:62ch"><b style="display:block;margin-bottom:6px;color:#14161F">Llegó a producción el 13 de mayo de 2026</b>Renombré la acción como "Pedir cambios", la frase que usaban las propias docentes al describir lo que querían. Agregué un onboarding que explica qué hace la función y que no se pierde nada.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin:0 0 10px;max-width:540px">
+        <div style="background:#FBFAF6;padding:16px 16px 14px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#B23A2E;margin-bottom:10px">Antes — "Regenerar"</div>
+          <div style="background:#FFFFFF;border:1px solid #E4E2D6;border-radius:6px;overflow:hidden"><img src="/assets/case01-regenerar-before.png" alt="Modal anterior: Regenerar secuencia didáctica, con un botón Regenerar verde azulado" style="height:230px;width:auto;max-width:100%;display:block;margin:0 auto;object-fit:contain"></div>
+        </div>
+        <div style="background:#FBFAF6;padding:16px 16px 14px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#2F6F4E;margin-bottom:10px">Después — "Pedir cambios"</div>
+          <div style="background:#FFFFFF;border:1px solid #E4E2D6;border-radius:6px;overflow:hidden"><img src="/assets/case01-pedir-cambios-after.png" alt="Modal nuevo: Pedir cambios en secuencia didáctica, con un botón Pedir cambios" style="height:230px;width:auto;max-width:100%;display:block;margin:0 auto;object-fit:contain"></div>
+        </div>
+      </div>
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin:0 0 40px;max-width:540px">El mismo modal antes y después del 13 de mayo. Además del verbo, el rediseño llevó el modal a la paleta unificada y quitó el ambiguo ícono de "regenerar".</p>
+
+      <h3 style="font-family:Fraunces,serif;font-size:18px;font-weight:600;margin:34px 0 14px">Resultado</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">En los 30 días previos al cambio, el 19% de las docentes que crearon una planificación usó la función (10 de 53). En los 30 días posteriores, lo hizo el 41% (24 de 59), y al mes siguiente la cifra se mantuvo en el 44%. La proporción de pedidos por planificación se duplicó, de 0,31 a 0,62.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">El aumento vino de la adopción, no de la intensidad. Las docentes que ya usaban la función promediaban 3,5 pedidos cada una, antes y después. El nuevo nombre no hizo que nadie iterara más: atrajo a quienes no la usaban en absoluto. Es exactamente lo que debería lograr un cambio de nombre, y pone un límite útil a lo que se le puede atribuir.</p>
+
+      <h3 style="font-family:Fraunces,serif;font-size:18px;font-weight:600;margin:34px 0 14px">Lo que no resolvió</h3>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">El onboarding decía que no se perdería nada. Las docentes no le creyeron.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Leí lo que realmente escribían en el campo del pedido: el 70% de los pedidos consecutivos de una misma docente contenía el pedido anterior completo, frente al 49% de antes del cambio. En cada ronda volvían a pegar toda su lista de cambios y agregaban el nuevo al final. El más largo llegó a 16.000 caracteres.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Dos cosas del código hacían que eso fuera doloroso de leer. Cada versión guardaba una referencia a la anterior, así que el original nunca se perdía: en 431 de 431 casos. Y el sistema ya le pasaba automáticamente al modelo el pedido anterior. El producto era no destructivo y tenía memoria. Solo que nunca lo decía, así que las docentes hacían a mano el trabajo de recordar.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">El nuevo nombre atrajo a más personas a un flujo que todavía les pedía que lo sortearan. Eso fue lo que llevó a replantear desde cero la propia interacción: en la <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:underline">V2</a>, el pedido queda anclado al fragmento que la docente quiere cambiar, con sus pedidos anteriores a la vista. Ahí, en 93 pedidos consecutivos, no hay ningún reenvío.</p>
+
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:26px 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Salvedades</b>El 13 de mayo se lanzaron varias cosas a la vez: el nuevo nombre salió junto con cambios en el flujo de la biblioteca y retoques de interfaz, así que el aumento de la adopción no puede atribuirse al nombre por sí solo. Los números son pequeños (de 10 docentes a 24) e indican una tendencia; no son estadísticamente significativos. Las cifras salen de la base de datos de producción, sin las cuentas del equipo. La serie se corta a mediados de julio: después, las vacaciones de invierno y la migración a la V2 hacen que la comparación pierda sentido.</div>
+
+      <div style="border-top:1px solid #E4E2D6;padding-top:24px;max-width:62ch">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:10px">Cierre</div>
+        <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0">El cambio de nombre es una pequeña historia de UX writing, con un techo que reconozco: resolvió que la función se descubriera, y nada más. El cambio más grande está en el ritmo de entrega. La evidencia a favor de la mayoría de estos arreglos existía desde hacía meses, esperando en una cola que nunca se vaciaba. Para un equipo pequeño, un diseñador que puede llevar cambios a producción —con revisión, dentro de su alcance— cambia lo que cuesta iterar.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="02-deciding-not-to-scale.dc.html" style="color:#6B6A63;text-decoration:none">← Decidir no escalar el producto</a>
+    <a href="03-ux-bug-data-model.dc.html" style="color:#3452D9;text-decoration:none">Siguiente: Un bug de UX que venía del modelo de datos →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
