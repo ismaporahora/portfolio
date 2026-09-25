@@ -59,7 +59,7 @@
       </div>
     </div>
     <div style="flex:1 1 420px;min-width:0">
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">En resumen — Las docentes veían sus grados duplicados en la interfaz. La causa no era un bug de interfaz: el modelo de datos exigía una materia al crear un grado, así que un único grado real se convertía en varios objetos en el sistema. Propuse desacoplar la materia del grado, y el arreglo llegó a producción el 17 de junio.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">En resumen — Las docentes veían sus grados duplicados en la interfaz. La causa no era un bug de interfaz: el modelo de datos exigía una materia al crear un grado, así que un mismo grado real se convertía en varios objetos en el sistema. Propuse desacoplar la materia del grado, y el arreglo llegó a producción el 17 de junio.</div>
 
       <h2 id="problem" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">El problema</h2>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">En la escuela primaria argentina, desde el punto de vista de la docente, no hay materias: hay grados. El producto pedía una materia al crear un grado. Una docente que enseñaba Lengua y Matemática en un único tercer grado terminaba con dos "terceros grados" en su lista. En la interfaz parecía una duplicación. En el modelo de datos, funcionaba tal como se había diseñado.</p>
