@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decidindo não escalar o produto — Ismael Menegolla</title>
+<meta name="description" content="A equipe explicava o baixo uso como um problema de relevância. Os dados diziam outra coisa, e o fluxo principal foi reconstruído.">
+<meta property="og:title" content="Decidindo não escalar o produto — Ismael Menegolla">
+<meta property="og:description" content="A equipe explicava o baixo uso como um problema de relevância. Os dados diziam outra coisa, e o fluxo principal foi reconstruído.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ismael Menegolla">
+<meta property="og:url" content="https://ismenegolla.vercel.app/pt/cases/02-deciding-not-to-scale.dc.html">
+<meta property="og:image" content="https://ismenegolla.vercel.app/assets/case02-grade-home.png">
+<meta property="og:image:width" content="2480">
+<meta property="og:image:height" content="1416">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="https://ismenegolla.vercel.app/cases/02-deciding-not-to-scale.dc.html">
+<link rel="alternate" hreflang="es" href="https://ismenegolla.vercel.app/es/cases/02-deciding-not-to-scale.dc.html">
+<link rel="alternate" hreflang="pt-BR" href="https://ismenegolla.vercel.app/pt/cases/02-deciding-not-to-scale.dc.html">
+<link rel="alternate" hreflang="x-default" href="https://ismenegolla.vercel.app/cases/02-deciding-not-to-scale.dc.html">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 02" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span style="white-space:nowrap">Caso 02 / 05 · <a href="/cases/02-deciding-not-to-scale.dc.html" hreflang="en" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">EN</a> / <a href="/es/cases/02-deciding-not-to-scale.dc.html" hreflang="es" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">ES</a> / <span style="color:#14161F">PT</span></span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">02 · Evidência</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#14161F;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#14161F;display:inline-block"></span>Decisão estratégica</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:22ch">Decidindo não escalar o produto</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Função</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Estratégia de produto, pesquisa, arquitetura da informação</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Equipe</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">5 pessoas (único designer)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Período</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">2026</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#data" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">A explicação que tínhamos</a>
+        <a href="#datachanged" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">O que os dados mudaram</a>
+        <a href="#hypotheses" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Duas hipóteses</a>
+        <a href="#why" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">Por que reconstruímos mesmo assim</a>
+        <a href="#grade" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">A turma como tela inicial</a>
+        <a href="#leftout" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">O que ficou de fora</a>
+        <a href="#measure" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">O que a aposta rendeu</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">O Planificando é uma plataforma de planejamento de aulas com IA para professoras de escolas primárias da Argentina. Sou o único designer de uma equipe de cinco pessoas e trabalho direto com o CEO nas decisões de produto. Este caso trata de como mudamos a explicação sobre por que o produto não era usado&nbsp;— e da decisão de reconstruir o fluxo principal em vez de escalá-lo. Esse redesign foi para produção como a V2; o que ele mudou, e os primeiros dados de uso, estão no <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">caso 01</a>.</div>
+
+      <h2 id="data" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">A explicação que tínhamos</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Por muito tempo, a equipe interpretou o baixo uso do produto como um problema de relevância: as professoras não planejavam com ele porque o que ele gerava não chegava perto o bastante do que elas realmente precisavam. Essa leitura tem uma consequência concreta: se o produto não é pertinente, o caminho não é fazer um redesign, e sim repensar o que ele é.</p>
+      <figure style="margin:0 0 26px">
+        <img src="/assets/case02-v1-uso-diario.webp" alt="Gráfico de linhas das sequências didáticas criadas por dia na V1, de agosto de 2025 a março de 2026: um pico de 65 no lançamento e, depois, sete meses quase sempre entre uma e cinco por dia, com um pico breve de 23 no fim de fevereiro" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V1, sete meses: 247 planos de 212 professoras, sem contar 22 contas da equipe e de teste. Noventa e quatro delas nunca criaram nenhum.</figcaption>
+      </figure>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Eu não estava convencido e não estava disposto a me comprometer com um redesign por intuição. O que tínhamos era uma contagem: um relatório extraído do banco de dados que mostrava quão pouco o produto era usado, e nada sobre onde as professoras paravam. O rastreamento instalado no produto tinha registrado algumas dezenas de eventos em sete meses. Antes de desenhar qualquer coisa, pedi analytics que pudessem responder à segunda pergunta e, até que chegassem, toda explicação que estava na mesa continuou sendo uma história que contávamos para nós mesmos.</p>
+
+      <h2 id="datachanged" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">O que os dados mudaram</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Com a instrumentação em funcionamento, o problema mudou de forma. Entre março e junho de 2026, metade das pessoas que fizeram login nunca clicou em "Criar plano": 113 de 225. Cerca de 40% voltaram depois do primeiro dia, e 30% voltaram e planejaram. A conversão do login até um plano concluído vinha caindo havia três meses, de cerca de 70% para cerca de 45%.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">As professoras chegavam e não planejavam. Esse não é o padrão de um produto que ninguém quer&nbsp;— é o padrão de um produto em que as pessoas não conseguem entrar. Defendi que a barreira era a usabilidade, contrariando a leitura com a qual a equipe vinha trabalhando, e que reconstruir o fluxo de entrada era o jeito de testar isso.</p>
+
+      <h2 id="hypotheses" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Duas hipóteses que os dados não conseguiam distinguir</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Os números diziam que as professoras experimentavam o produto e não voltavam. Não diziam por quê. Tínhamos duas explicações possíveis, que apontavam para respostas muito diferentes.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">A primeira: usabilidade. O formulário de entrada causava danos que dava para observar diretamente. Um terço dos usuários deixava vazio o campo "descreva sua turma". As professoras nos disseram que os dois campos de contexto eram confusos porque não ficava claro que efeito cada um tinha sobre o resultado. O campo de tema tinha um limite de 200 caracteres, e as professoras queriam dar mais contexto do que ele permitia. Em um teste de usabilidade, uma participante disse que o tempo de espera “parecia infinito”.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">A segunda: disponibilidade mental. A maioria das professoras que entrevistamos estava lidando com burnout. Um produto pode ser perfeitamente usável e, ainda assim, perder para o fato de que quem o usa não tem mais espaço mental para adotar nada novo. Nossa pesquisa acrescentou uma terceira camada: as professoras costumam chegar com uma sequência já pensada e querem ajuda com uma atividade específica dentro dela, enquanto o produto gerava sequências longas, densas e completas. Se esse descompasso fosse o problema central, um formulário mais amigável não o resolveria.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Um redesign só responde à primeira hipótese. Sabíamos disso quando o escolhemos.</p>
+
+      <h2 id="why" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Por que reconstruímos mesmo assim</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Com os custos tradicionais de desenvolvimento, reconstruir o núcleo de um produto para testar uma hipótese não é uma aposta defensável, e não a teríamos feito. O que mudou a conta foram as ferramentas. Com o Claude Design para prototipar e o Claude Code para implementar, o custo de construir a nova versão caiu tanto que colocá-la em produção virou a forma mais barata que tínhamos de testar se a barreira era a usabilidade. A decisão foi tomada em equipe, com o CEO, e incluiu um terceiro motivo além da hipótese: nos livrar do código legado que o produto vinha arrastando.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">A aposta, dita sem rodeios: se a barreira era a usabilidade, a nova versão mostraria isso no número de professoras que chegassem a um primeiro plano. Se não fosse, teríamos pago um preço baixo para eliminar a maior variável e poderíamos olhar para os problemas mais difíceis com dados mais limpos.</p>
+
+      <h2 id="grade" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">A turma como tela inicial</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Minha contribuição específica para a nova versão veio do campo. Desde as nossas primeiras rodadas de teste de usabilidade, em julho de 2025, as professoras tinham dificuldade para trocar de disciplina dentro da mesma turma. Em fevereiro de 2026, os usuários acabavam com turmas duplicadas porque o produto amarrava cada turma a uma única disciplina. Em junho, rastreei esse atrito até o próprio modelo de dados, e <a href="03-ux-bug-data-model.dc.html" style="color:#3452D9;text-decoration:none">a correção foi para produção em 17 de junho</a>: a disciplina foi desacoplada da turma, porque uma professora de escola primária não tem disciplinas, tem turmas, e ensina várias disciplinas ao mesmo grupo.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">A nova versão leva essa lógica até o fim. Em vez de partir de um formulário de planejamento, o produto agora parte da <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:none">turma como espaço de trabalho</a>, onde a professora vê o contexto do seu grupo e tudo o que já foi planejado para ele. O formulário passou a ser conversacional, em etapas, para baixar o custo de entrada que os campos vazios do formulário antigo registravam semana após semana.</p>
+      <figure style="margin:0 0 26px">
+        <img src="/assets/case02-grade-home.png" alt="A nova tela inicial: a turma 2° A como espaço de trabalho, com o contexto do grupo carregado, um prompt conversacional e os planos recentes logo abaixo" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">A nova tela inicial: a professora chega à sua turma, e não a um formulário. O contexto do grupo já está carregado, e o planejamento parte de um único prompt, escrito com as palavras dela.</figcaption>
+      </figure>
+
+      <h2 id="leftout" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">O que ficou de fora</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">O escopo foi definido em função do que uma equipe de cinco pessoas conseguia construir e testar em semanas. As perguntas diferenciadas por disciplina e a diversificação por nível de desempenho ficaram de fora desta versão. A visão para diretores de escola e supervisores ficou para o próximo ciclo: o raciocínio foi sequencial, já que uma camada para diretores de escola não tem o que relatar enquanto as professoras não estiverem de fato usando o produto. As features institucionais esperam o fluxo das professoras provar seu valor.</p>
+
+      <h2 id="measure" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">O que a aposta rendeu</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">A V2 foi para produção em agosto e rodou em paralelo com a V1 por um mês, o que tornou possível uma comparação: uma coorte de novos cadastros e se eles concluem um primeiro plano em até sete dias.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Por essa medida, a ativação passou de 33% para 43%. O número se sustenta porque a ativação da própria V1 foi estável em três janelas de medição distintas&nbsp;— 35%, 37%, 33%&nbsp;— e é isso que separa este resultado de uma oscilação sazonal. As professoras também voltaram: a proporção das que planejaram de novo em outro dia passou de 15% para 49%.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">A objeção óbvia é que a V2 herdou usuários experientes. Não foi isso que sustentou o resultado: 48 das 75 professoras da V2 nunca tinham planejado na V1, e elas fizeram em média 2,31 planos cada uma, contra 1,39 na V1.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">A usabilidade era uma barreira real. Não era a única, e isto nunca foi um experimento controlado&nbsp;— as duas versões rodaram em paralelo, com a aquisição dividida entre elas, sem atribuição aleatória.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Uma nota sobre a comparabilidade</b>Na maior parte dos aspectos, a V1 e a V2 não medem do mesmo jeito. O evento de geração da V2 dispara em três modos e três estados, enquanto o da V1 disparava em um só, o que infla em 2,2 vezes uma comparação direta. O painel de administração da V1 conta cada regeneração como um plano; o da V2, não. E os dois projetos do Mixpanel se afastam do banco de dados em direções opostas, então misturar fontes produz o número que você quiser. As afirmações acima sobreviveram a essa auditoria; várias outras que eu esperava fazer, não.</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:0;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Uma nota sobre as evidências deste caso</b>Nossas amostras são pequenas, de 27 a 229 usuários, dependendo da janela de medição, então são indícios de tendência, não estatística. Os números de ativação vêm de duas populações diferentes&nbsp;— as 225 pessoas que fizeram login e os 229 usuários do banco de dados&nbsp;— e por isso os números de login e os de retorno não compartilham o mesmo denominador. Várias mudanças de interface foram para produção juntas, o que limita o que dá para atribuir a um único lançamento.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="04-redesigning-the-core-flow.dc.html" style="color:#6B6A63;text-decoration:none">← Reconstruindo o fluxo principal</a>
+    <a href="01-shipping-design-changes.dc.html" style="color:#3452D9;text-decoration:none">Próximo: Mudanças de design direto em produção →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
