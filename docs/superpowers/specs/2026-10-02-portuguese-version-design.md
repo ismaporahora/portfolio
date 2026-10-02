@@ -103,7 +103,8 @@ Kept untouched, as in the English pages:
   `hreflang="en"`, `hreflang="es"`, `hreflang="pt-BR"` and
   `hreflang="x-default"` (English).
 - PT pages: translated `<title>`, `meta description`, `og:title` and
-  `og:description`, plus their own `og:url` under `/pt/`.
+  `og:description`, plus their own `og:url` under `/pt/`. The home title keeps
+  the job title in English (`Ismael Menegolla — Product Designer`).
 - `sitemap.xml` gains the six `/pt/` URLs, with the date of the change as
   `lastmod`.
 
@@ -122,8 +123,10 @@ The throwaway checker from the Spanish version is extended to three languages:
 5. Each page's toggle links to exactly the two other languages, at the
    mirrored path.
 6. `sitemap.xml` lists all 18 pages.
-7. No English-only phrases remain in `pt/`. The scan uses the same approach as
-   the Spanish untranslated scan, with an allowlist for the kept anglicisms.
+7. No untranslated copy remains in `pt/`. The scan looks for the English and
+   Spanish fixed strings, plus English function words (`the`, `and`, `with`…)
+   in body text. Kept anglicisms (`owner`, `design system`…) are not function
+   words, so they pass without an allowlist.
 
 After the checker, a visual review in the built-in browser at desktop width and
 375 px:
