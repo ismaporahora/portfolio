@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Um bug de UX que vinha do modelo de dados — Ismael Menegolla</title>
+<meta name="description" content="As professoras viam turmas duplicadas. A causa estava no modelo de dados, não na interface. Diagnosticado, proposto e em produção em junho de 2026.">
+<meta property="og:title" content="Um bug de UX que vinha do modelo de dados — Ismael Menegolla">
+<meta property="og:description" content="As professoras viam turmas duplicadas. A causa estava no modelo de dados, não na interface. Diagnosticado, proposto e em produção em junho de 2026.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ismael Menegolla">
+<meta property="og:url" content="https://ismenegolla.vercel.app/pt/cases/03-ux-bug-data-model.dc.html">
+<meta property="og:image" content="https://ismenegolla.vercel.app/assets/case03-db-row.png">
+<meta property="og:image:width" content="1808">
+<meta property="og:image:height" content="408">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" hreflang="en" href="https://ismenegolla.vercel.app/cases/03-ux-bug-data-model.dc.html">
+<link rel="alternate" hreflang="es" href="https://ismenegolla.vercel.app/es/cases/03-ux-bug-data-model.dc.html">
+<link rel="alternate" hreflang="pt-BR" href="https://ismenegolla.vercel.app/pt/cases/03-ux-bug-data-model.dc.html">
+<link rel="alternate" hreflang="x-default" href="https://ismenegolla.vercel.app/cases/03-ux-bug-data-model.dc.html">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</helmet>
+
+<div data-screen-label="Case 03" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#6B6A63;margin-bottom:56px">
+    <a href="../index.html" style="color:#14161F;text-decoration:none">← Ismael Menegolla</a>
+    <span style="white-space:nowrap">Caso 04 / 05 · <a href="/cases/03-ux-bug-data-model.dc.html" hreflang="en" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">EN</a> / <a href="/es/cases/03-ux-bug-data-model.dc.html" hreflang="es" style="color:#6B6A63;text-decoration:none;border-bottom:1px solid #C9C7BA;padding-bottom:2px">ES</a> / <span style="color:#14161F">PT</span></span>
+  </div>
+
+  <div style="margin-bottom:34px">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid #E4E2D6;color:#6B6A63;background:#FBFAF6">04 · Sistemas</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#2F6F4E;display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#2F6F4E;display:inline-block"></span>Em produção · 17/6</span>
+    </div>
+    <h1 style="font-family:Fraunces,serif;font-weight:600;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-0.01em;margin:0;max-width:18ch">Um bug de UX que vinha do modelo de dados</h1>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#E4E2D6;border:1px solid #E4E2D6;border-radius:10px;overflow:hidden;margin-bottom:44px">
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Função</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Product Designer&nbsp;— diagnóstico, proposta, implementação de frontend</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Período</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Junho de 2026 (deploy em 17 de junho)</div></div>
+    <div style="background:#FBFAF6;padding:16px 20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:6px">Ferramentas</div><div style="font-size:12.5px;line-height:1.45;color:#2A2D3A">Claude Code · gravações de sessão · feedback de usuários</div></div>
+  </div>
+
+  <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:14px;padding:52px 60px;display:flex;flex-wrap:wrap;gap:44px">
+    <div style="display:none">
+      <div style="position:sticky;top:24px">
+        <a href="#problem" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">O problema</a>
+        <a href="#diagnosis" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">O diagnóstico</a>
+        <a href="#proposal" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">A proposta</a>
+        <a href="#fix" style="display:block;color:inherit;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #E4E2D6">A correção</a>
+        <a href="#caveats" style="display:block;color:#14161F;font-weight:500;text-decoration:none;padding:10px 0 10px 14px;border-left:2px solid #B23A2E">Ressalva</a>
+      </div>
+    </div>
+    <div style="flex:1 1 420px;min-width:0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">Em resumo&nbsp;— As professoras viam suas turmas duplicadas na interface. A causa não era um bug de UI: o modelo de dados exigia uma disciplina (materia) na criação da turma, então uma mesma turma do mundo real virava vários objetos no sistema. Propus desacoplar a disciplina da turma, e a correção foi para produção em 17 de junho.</div>
+
+      <h2 id="problem" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">O problema</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Na escola primária argentina, do ponto de vista da professora, não existem disciplinas: existem turmas. O produto pedia uma disciplina ao criar uma turma. Uma professora que dava aulas de Língua (Lengua) e de Matemática para uma única turma de 3º ano acabava com dois “3º anos” na lista dela. Na interface, parecia uma duplicação. No modelo de dados, estava funcionando como projetado.</p>
+
+      <h2 id="diagnosis" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">O diagnóstico</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Os relatos do bug apontavam para a lista de turmas. As gravações de sessão e o modelo de dados apontavam para outro lugar: o acoplamento da disciplina à turma no momento da criação. Corrigir a lista teria escondido o sintoma.</p>
+
+      <figure style="margin:0 0 40px">
+        <img src="/assets/case03-db-row.png" alt="Linha do banco de dados: um plano cujo tema é claramente de matemática (identificación del número 1) salvo em Materia: Lengua, porque a turma impunha uma disciplina" style="width:100%;height:auto;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FFFFFE">
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">O bug no banco de dados: um plano cujo tema é claramente de matemática (“identificación del número 1”) salvo em Língua&nbsp;— a turma impunha a disciplina. Dados do usuário desfocados.</figcaption>
+      </figure>
+
+      <h2 id="proposal" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">A proposta</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Escrita no formato problema / proposta / considerações / decisão, o mesmo que uso em toda proposta de produto (um exemplo anterior: o redesign de janeiro para gerar planos sem uma turma criada). A proposta: o formulário da turma deixa de pedir a disciplina (e a quantidade de alunos); a disciplina passa a ser pedida na hora de planejar, toda vez.</p>
+
+      <h2 id="fix" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">A correção</h2>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">Foi para produção em 17 de junho de 2026. Agora cada grupo do mundo real corresponde a uma única turma. A disciplina fica onde a professora realmente pensa nela: na hora de planejar.</p>
+
+      <h2 id="caveats" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Ressalva</h2>
+      <div style="width:240px;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(-1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12)"><b style="display:block;font-size:12px;margin-bottom:4px">Ressalva</b>Desde a correção, o número de turmas criadas ainda é pequeno demais para dizer se a confusão com turmas duplicadas desapareceu. Este caso é o diagnóstico, não o resultado.</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+    <a href="01-shipping-design-changes.dc.html" style="color:#6B6A63;text-decoration:none">← Mudanças de design direto em produção</a>
+    <a href="05-design-system-in-code.dc.html" style="color:#3452D9;text-decoration:none">Próximo: Levando a marca para o código →</a>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
