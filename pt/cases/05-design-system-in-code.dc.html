@@ -77,11 +77,11 @@ a:hover{color:#14161F}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:1px;background:#E4E2D6;border-top:1px solid #E4E2D6">
       <div style="background:#FFFFFE;padding:20px 24px">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:8px">O que a v2 abandonou</div>
-        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#2A2D3A">O isologo da v1 e o acento verde-menta. Nos testes de usabilidade, o verde-menta aparecia de forma pouco confiável nas telas das professoras; o logotipo sustenta a identidade sozinho.</p>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#2A2D3A">O isologo da v1 e o acento verde-menta. Nos testes de usabilidade, o verde-menta não aparecia de forma consistente nas telas das professoras; o logotipo sustenta a identidade sozinho.</p>
       </div>
       <div style="background:#FFFFFE;padding:20px 24px">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:8px">Por que violeta</div>
-        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#2A2D3A">Não foi questão de gosto. Cada cor candidata da paleta anterior foi testada quanto à acessibilidade nas telas reais das professoras; o violeta foi a única que sobreviveu&nbsp;— o único acento da interface, por eliminação.</p>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#2A2D3A">Não foi questão de gosto. Cada cor candidata da paleta anterior passou por testes de acessibilidade nas telas reais das professoras; só o violeta sobreviveu&nbsp;— o único acento da interface, por eliminação.</p>
       </div>
     </div>
   </div>
@@ -114,7 +114,7 @@ a:hover{color:#14161F}
       <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#9B9A90;margin-bottom:20px">Texto e bordas · quatro níveis para cada um</div>
       <div style="display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:12px;background:#37352F;flex-shrink:0"></span><span style="min-width:0"><b style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:block">ink · #37352F</b><span style="font-size:13px;color:#6B6A63">Texto principal e títulos&nbsp;— quente, não preto</span></span></div>
-        <div style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:12px;background:#6B6862;flex-shrink:0"></span><span style="min-width:0"><b style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:block">ink-2 · #6B6862 &nbsp;/&nbsp; muted · #9B9A97</b><span style="font-size:13px;color:#6B6A63">Texto secundário / textos de apoio, contagens, sublegendas</span></span></div>
+        <div style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:12px;background:#6B6862;flex-shrink:0"></span><span style="min-width:0"><b style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:block">ink-2 · #6B6862 &nbsp;/&nbsp; muted · #9B9A97</b><span style="font-size:13px;color:#6B6A63">Texto secundário / textos de apoio, contagens, rótulos secundários</span></span></div>
         <div style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:12px;background:#C9C7C1;flex-shrink:0"></span><span style="min-width:0"><b style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:block">faint · #C9C7C1</b><span style="font-size:13px;color:#6B6A63">Texto desabilitado, chevrons em repouso, pontos inativos</span></span></div>
         <div style="display:flex;align-items:center;gap:14px"><span style="width:52px;height:52px;border-radius:12px;background:#FFFFFF;border:1.5px solid #E9E7E1;box-sizing:border-box;flex-shrink:0;display:flex;align-items:center;justify-content:center"><span style="width:26px;height:1px;background:#F1EFE9"></span></span><span style="min-width:0"><b style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;display:block">border · #E9E7E1 &nbsp;/&nbsp; border-soft · #F1EFE9</b><span style="font-size:13px;color:#6B6A63">Bordas padrão de 1.5px / separadores finíssimos entre linhas</span></span></div>
       </div>
@@ -453,9 +453,9 @@ a:hover{color:#14161F}
   </div>
 
   <div style="background:#FFFFFE;border:1px solid #E4E2D6;border-radius:16px;padding:34px 38px;margin-bottom:52px">
-    <h2 style="font-family:Fraunces,serif;font-weight:600;font-size:24px;margin:0 0 14px">Por que ele vive no código</h2>
+    <h2 style="font-family:Fraunces,serif;font-weight:600;font-size:24px;margin:0 0 14px">Por que o sistema vive no código</h2>
     <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0 0 12px;max-width:66ch">Uma biblioteca do Figma documenta a intenção; um componente a faz valer. Quando o owner pediu botões menores&nbsp;— “se ven un poco grandes”&nbsp;— a mudança foi uma única constante em <code style="font-family:'IBM Plex Mono',monospace;font-size:13.5px">pill-button.tsx</code> e todas as telas acompanharam. As regras que não podem virar código (nunca verde-menta, nunca fundo branco, só o logotipo) vivem como comentários nos próprios tokens, e por isso aparecem no autocomplete e na revisão de código.</p>
-    <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0;max-width:66ch">Sou o único designer e entrego os pull requests&nbsp;— o sistema é o que faz as decisões de design sobreviverem quando eu não estou na sala.</p>
+    <p style="font-size:15.5px;line-height:1.7;color:#2A2D3A;margin:0;max-width:66ch">Sou o único designer e abro os pull requests&nbsp;— o sistema é o que faz as decisões de design sobreviverem quando eu não estou na sala.</p>
   </div>
 
   <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
