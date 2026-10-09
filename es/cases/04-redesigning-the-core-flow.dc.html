@@ -26,7 +26,7 @@
 <x-dc>
 <helmet data-dc-atomics>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}@media (max-width:640px){.demo-fig{margin-left:-44px!important;margin-right:-44px!important}.demo-fig figcaption{padding:0 44px}}</style>
 </helmet>
 
 <div data-screen-label="Case 04" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
@@ -66,7 +66,11 @@
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.65;color:#4A4A42;border-left:3px solid #2F6F4E;padding:6px 0 6px 16px;margin-bottom:40px">La V1 era un formulario que hacía las mismas preguntas cada semana y olvidaba las respuestas. Rediseñé el producto en torno al grado, escribí cada cambio como una decisión y lo llevé a producción. Este caso reúne esas decisiones y el primer ciclo de datos de uso. La evidencia de que reconstruir era la decisión adecuada está en el <a href="02-deciding-not-to-scale.dc.html" style="color:#3452D9;text-decoration:none">caso 02</a>.</div>
 
       <h2 id="starting" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">El punto de partida</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">La V1 era un formulario. La docente seleccionaba un grado, describía el tema, volvía a escribir lo que sabían sus estudiantes, elegía una cantidad de clases en un simple dropdown y esperaba unos 30 segundos para recibir un documento. Cada generación empezaba desde cero. La lista de planificaciones se llenaba de versiones casi idénticas: la única forma de iterar sobre una planificación, una acción "Regenerar", pasaba inadvertida para la mayoría, así que las docentes, en cambio, volvían a generar.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 24px;max-width:62ch">La V1 era un formulario. La docente seleccionaba un grado, describía el tema, volvía a escribir lo que sabían sus estudiantes, elegía una cantidad de clases en un simple dropdown y esperaba unos 30 segundos para recibir un documento. Cada generación empezaba desde cero. La lista de planificaciones se llenaba de versiones casi idénticas: la única forma de iterar sobre una planificación, una acción "Regenerar", pasaba inadvertida para la mayoría, así que las docentes, en cambio, volvían a generar.</p>
+      <figure class="demo-fig" style="margin:0 0 40px">
+        <video data-autoplay src="/assets/demo/demo-flujo-completo.mp4" poster="/assets/demo/demo-flujo-completo-poster.jpg" muted loop playsinline preload="none" aria-label="Grabación de pantalla de la V2, del inicio del grado a una planificación terminada" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">La V2 de punta a punta, en medio minuto: qué enseñar (con sugerencias del diseño curricular), un contexto temático, la pantalla de repaso, la espera y la planificación. Grabado en una copia de demostración del producto, con datos ficticios.</figcaption>
+      </figure>
 
       <h2 id="d1" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decisión 1 · El grado pasó a ser el espacio de trabajo</h2>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La V1 organizaba la app en torno al generador: grados, planificaciones y textos eran secciones paralelas del menú. En la V2 cada grado es un espacio. La pantalla de inicio es el grado, las planificaciones viven dentro de él y la app se abre donde trabaja la docente.</p>
@@ -92,7 +96,11 @@
       -->
 
       <h2 id="d3" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decisión 3 · El sistema propone, la docente ajusta</h2>
-      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 40px;max-width:62ch">La V1 pedía una cantidad de clases antes de mostrar nada. La V2 lo invierte: antes de generar, una pantalla de revisión muestra lo que entendió el sistema (grupo, materia, tema, texto) y recomienda una cantidad de clases que la docente puede ajustar con un slider. La misma inversión rige el flujo de Lengua: en lugar de una biblioteca de 39 textos para explorar, el sistema sugiere dos textos acordes al pedido, con la opción de pegar uno propio.</p>
+      <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 24px;max-width:62ch">La V1 pedía una cantidad de clases antes de mostrar nada. La V2 lo invierte: antes de generar, una pantalla de revisión muestra lo que entendió el sistema (grupo, materia, tema, texto) y recomienda una cantidad de clases que la docente puede ajustar con un slider. La misma inversión rige el flujo de Lengua: en lugar de una biblioteca de 39 textos para explorar, el sistema sugiere dos textos acordes al pedido, con la opción de pegar uno propio.</p>
+      <figure class="demo-fig" style="margin:0 0 40px">
+        <video data-autoplay src="/assets/demo/demo-d3-repaso.mp4" poster="/assets/demo/demo-d3-repaso-poster.jpg" muted loop playsinline preload="none" aria-label="Grabación de pantalla del repaso y del control de cantidad de clases" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">La pantalla de repaso: lo que el sistema entendió del pedido y una cantidad de clases recomendada que la docente ajusta con un control deslizante.</figcaption>
+      </figure>
       <!--
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin:0 0 40px">
         <div style="flex:1 1 240px;min-width:0"><img src="/assets/case04-d3-before.jpg" alt="V1 — cantidad de clases pedida de entrada en un simple dropdown" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6B6A63;margin-top:6px">V1</div></div>
@@ -104,15 +112,19 @@
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La V1 tenía un modo de edición aparte, y su única forma de pedir cambios —⁠una acción "Regenerar"⁠— pasaba inadvertida para la mayoría, así que en la práctica iterar significaba volver a generar, y por eso la lista de planificaciones se llenaba de versiones casi idénticas. En la V2 la planificación se puede editar directamente, y un panel "¿Qué cambiamos?" recibe pedidos de cambio, con cambios sugeridos en forma de chips para que la docente aprenda qué tipos de ajustes son posibles.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Si desplazó a la regeneración, todavía no puedo decirlo: el panel dispara un único evento sin propiedades, así que los datos no permiten distinguir un pedido de cambio de una regeneración. Una laguna de instrumentación que dejé yo mismo, primero en la lista de pendientes.</p>
       <!-- V1 counterpart pending: drop assets/case04-d4-before.jpg in, then restore the two-up flex row. -->
-      <figure style="margin:26px 0 40px;max-width:540px">
-        <img src="/assets/case04-d4-after.webp" alt="V2 — la planificación editable directamente, con el panel ¿Qué cambiamos? anclado a un objetivo seleccionado" loading="lazy" style="width:100%;display:block;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6">
-        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V2 — el pedido queda anclado al fragmento que seleccionó la docente, con cambios sugeridos en forma de chips debajo del campo.</figcaption>
+      <figure class="demo-fig" style="margin:26px 0 40px">
+        <video data-autoplay src="/assets/demo/demo-pedir-cambios.mp4" poster="/assets/demo/demo-pedir-cambios-poster.jpg" muted loop playsinline preload="none" aria-label="Grabación de pantalla: seleccionar un fragmento, pedir un cambio y ver lo editado resaltado" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V2 — la docente selecciona un fragmento y pide un cambio; la planificación vuelve con la zona editada resaltada y la opción de deshacer todo.</figcaption>
       </figure>
 
       <h2 id="d5" style="font-family:Fraunces,serif;font-size:24px;font-weight:600;margin:0 0 16px;scroll-margin-top:24px">Decisión 5 · La espera se convirtió en el momento de capturar contexto</h2>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La decisión 2 le dio al producto un lugar donde guardar el contexto. No hizo que las docentes lo escribieran: en la versión que probamos en escuelas, seis de siete planificaciones tenían vacío el campo de contexto. Era lo último que se interponía entre la docente y el resultado por el que había venido, así que se lo saltaba.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">La solución obvia es un mejor microcopy, o ejemplos, o un placeholder más amigable. Yo, en cambio, moví la pregunta de lugar.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Generar una planificación lleva cerca de un minuto, y la docente lo pasa mirando una barra de progreso. Por eso ahora las preguntas aparecen ahí, una a una, con tres opciones y un campo de texto libre. La pantalla indica que la respuesta no va a cambiar la planificación que se está generando: alimenta el contexto del grupo, que es de donde lee la próxima planificación. Responder es opcional, la planificación puede llegar en medio de una pregunta y las preguntas ya respondidas no se repiten.</p>
+      <figure class="demo-fig" style="margin:8px 0 26px">
+        <video data-autoplay src="/assets/demo/demo-d5-espera.mp4" poster="/assets/demo/demo-d5-espera-poster.jpg" muted loop playsinline preload="none" aria-label="Grabación de pantalla de la espera, con una pregunta sobre el grupo" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">La pregunta aparece mientras se arma la planificación. Responder es opcional, y la planificación puede llegar en medio de una pregunta.</figcaption>
+      </figure>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 24px;max-width:62ch">45 docentes respondieron al menos una pregunta, con una mediana de 5 respuestas por docente.</p>
       <div style="width:240px;background:#F5D563;color:#3A2F0B;padding:15px 17px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.55;transform:rotate(1.5deg);border-radius:2px;box-shadow:0 6px 14px rgba(20,22,31,0.12);margin:0 0 40px"><b style="display:block;font-size:12px;margin-bottom:4px">Lo que estoy observando en las opciones</b>Entre "Sí / A medias / Todavía no", la opción del medio es la más elegida. Si las respuestas siguen cayendo ahí, lo que hay que mejorar son las opciones, no la pregunta.</div>
 
@@ -140,5 +152,34 @@
 </div>
 
 </x-dc>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var narrow = window.matchMedia ? matchMedia('(max-width: 640px)') : { matches: false };
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && !reduce && !v.dataset.paused) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.4 }) : null;
+  function wire() {
+    document.querySelectorAll('video[data-autoplay]:not([data-wired])').forEach(function (v) {
+      v.setAttribute('data-wired', '');
+      v.muted = true;
+      if (reduce) v.controls = true;
+      else v.addEventListener('click', function () {
+        if (narrow.matches) { v.play(); if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); return; }
+        if (v.paused) { delete v.dataset.paused; v.play(); } else { v.dataset.paused = '1'; v.pause(); }
+      });
+      if (io) io.observe(v);
+    });
+  }
+  // support.js pinta la página después de este script: se reintenta hasta que aparecen.
+  new MutationObserver(wire).observe(document, { childList: true, subtree: true });
+  var tries = 0, t = setInterval(function () { wire(); if (++tries > 40) clearInterval(t); }, 500);
+  wire();
+})();
+</script>
 </body>
 </html>
