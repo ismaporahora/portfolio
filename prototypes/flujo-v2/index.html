@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planificando V2 · prototipo navegable — Ismael Menegolla</title>
+<meta name="description" content="Prototipo navegable del flujo de Planificando V2: el grado, qué enseñar, el repaso, la espera y la planificación.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { font-family: 'Figtree', system-ui, sans-serif; background: #E7E4DD; -webkit-font-smoothing: antialiased; }
+  button { font-family: inherit; }
+  @keyframes cf-rise-kf { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  .cf-rise { animation: cf-rise-kf 360ms cubic-bezier(.2,.7,.3,1) both; }
+  @keyframes cf-pulse-kf { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: .7; } }
+  .cf-pulse { animation: cf-pulse-kf 1300ms ease-in-out infinite; }
+  @keyframes gh-blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+  .gh-caret { animation: gh-blink 1s step-start infinite; }
+  .gh-sug:hover { background: #F4F0FC !important; border-color: rgba(0,0,0,.16) !important; }
+  .gh-row:hover { background: #F7F5FB; }
+  .gh-factrow:hover { background: #F7F5FB; }
+  .gh-factrow:hover .gh-factedit { opacity: 1 !important; }
+  .gh-fieldrow:hover .gh-rowedit { opacity: 1 !important; }
+  .gh-range { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 6px; outline: none; }
+  .gh-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--acc, #6D28D9); border: 3px solid #fff; box-shadow: 0 2px 7px rgba(11,27,102,.28); cursor: pointer; }
+  .gh-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--acc, #6D28D9); border: 3px solid #fff; box-shadow: 0 2px 7px rgba(11,27,102,.28); cursor: pointer; }
+  .gh-range::-moz-range-track { height: 6px; border-radius: 6px; background: transparent; }
+  @keyframes gh-shimmer { 0% { background-position: -420px 0; } 100% { background-position: 420px 0; } }
+  .gh-sk { background: linear-gradient(90deg, #ECEAE4 25%, #F5F3ED 37%, #ECEAE4 63%); background-size: 800px 100%; animation: gh-shimmer 1.5s linear infinite; border-radius: 7px; }
+  .gh-card:hover { border-color: rgba(109,40,217,.35) !important; box-shadow: 0 6px 20px -8px rgba(11,27,102,.18); }
+  .ng-chip:hover { background: #F4F0FC !important; }
+  @keyframes gh-slide-in { from { transform: translateX(100%); } to { transform: none; } }
+  .gh-drawer { animation: gh-slide-in 260ms cubic-bezier(.2,.7,.3,1) both; }
+  @keyframes gh-fade-kf { from { opacity: 0; } to { opacity: 1; } }
+  .gh-fade { animation: gh-fade-kf 200ms ease both; }
+  /* espera de producción: el chip late una vez, el tilde se dibuja, el riel va y vuelve */
+  @keyframes gh-tick-kf { 0% { transform: scale(1); } 40% { transform: scale(1.06); } 100% { transform: scale(1); } }
+  .gh-tick { animation: gh-tick-kf 320ms ease-out; }
+  @keyframes gh-draw-kf { from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; } }
+  .gh-draw { stroke-dasharray: 24; animation: gh-draw-kf 380ms ease-out both; }
+  @keyframes gh-rail-kf { 0% { left: -34%; } 100% { left: 100%; } }
+  .gh-rail { animation: gh-rail-kf 1.6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .gh-sk, .gh-drawer, .gh-fade, .cf-rise, .cf-pulse, .gh-caret, .gh-tick, .gh-draw { animation: none !important; }
+    .gh-rail { animation: none !important; left: 0; width: 100% !important; opacity: .35; }
+  }
+
+  .proto-bar { position: fixed; top: 0; left: 0; right: 0; height: 44px; display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 0 18px; background: #14161F; color: #C9C7BA; font: 12px/1.3 'IBM Plex Mono', monospace; z-index: 10; }
+  .proto-bar a { color: #FFFFFE; text-decoration: none; white-space: nowrap; }
+  .proto-bar a:hover { text-decoration: underline; }
+  .proto-bar .note { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: right; }
+  @media (max-width: 640px) { .proto-bar .note .long { display: none; } }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="proto-bar">
+  <a id="back" href="/es/cases/04-redesigning-the-core-flow.dc.html">← Volver al caso</a>
+  <span class="note" id="note">Prototipo navegable · datos de ejemplo<span class="long"> · mejor en una computadora</span></span>
+</div>
+<div id="root"></div>
+<script>
+// Barra en el idioma del caso desde el que se abrió (?lang=en|es|pt).
+(function () {
+  var lang = (new URLSearchParams(location.search).get('lang') || 'es').toLowerCase();
+  var T = {
+    en: { back: '← Back to the case', href: '/cases/04-redesigning-the-core-flow.dc.html', note: 'Interactive prototype · sample data', long: ' · best on a computer · interface in Spanish', html: 'en' },
+    es: { back: '← Volver al caso', href: '/es/cases/04-redesigning-the-core-flow.dc.html', note: 'Prototipo navegable · datos de ejemplo', long: ' · mejor en una computadora', html: 'es' },
+    pt: { back: '← Voltar ao caso', href: '/pt/cases/04-redesigning-the-core-flow.dc.html', note: 'Protótipo navegável · dados de exemplo', long: ' · melhor num computador · interface em espanhol', html: 'pt-BR' }
+  }[lang] || null;
+  if (!T) return;
+  document.documentElement.lang = T.html;
+  var back = document.getElementById('back'); back.textContent = T.back; back.href = T.href;
+  var note = document.getElementById('note'); note.firstChild.nodeValue = T.note; note.querySelector('.long').textContent = T.long;
+})();
+</script>
+<script src="app.js"></script>
+</body>
+</html>
