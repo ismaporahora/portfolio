@@ -26,7 +26,7 @@
 <x-dc>
 <helmet data-dc-atomics>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}@media (max-width:640px){.case-card{padding:32px 22px!important;gap:36px!important}}</style>
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}@media (max-width:640px){.case-card{padding:32px 22px!important;gap:36px!important}.demo-fig{margin-left:-22px!important;margin-right:-22px!important}.demo-fig figcaption{padding:0 22px}}</style>
 </helmet>
 
 <div data-screen-label="Case 01" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
@@ -121,6 +121,10 @@
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Reading what they actually wrote in the request field, 70% of consecutive requests from the same teacher contained the previous request in full — up from 49% before the change. Each round they re-pasted their entire list of edits and appended the new one. The longest ran to 16,000 characters.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Two things in the code made that painful to read. Every version stored a pointer to the one before it, so the original was never lost — 431 of 431 times. And the system already passed the previous request to the model automatically. The product was non-destructive and it had memory. It just never said so, so teachers did the remembering by hand.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">The rename brought more people into a flow that was still asking them to work around it. That's what sent the interaction itself back to the drawing board: in <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:underline">V2</a> a request is anchored to the fragment you want changed, with your earlier requests visible. Re-sending there is zero, across 93 consecutive requests.</p>
+      <figure class="demo-fig" style="margin:8px 0 0">
+        <video data-autoplay src="../assets/demo/demo-pedir-cambios.mp4" poster="../assets/demo/demo-pedir-cambios-poster.jpg" muted loop playsinline preload="none" aria-label="Screen recording: selecting a fragment of the plan, asking for a change and seeing the edits highlighted" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V2: select a fragment and the request is anchored to it; the plan comes back with the edited zone highlighted. Recorded on a demo copy with fictitious data; interface in Spanish.</figcaption>
+      </figure>
 
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:26px 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Caveats</b>The May 13 release was bundled — the rename shipped alongside library workflow changes and UI polish, so the adoption lift can't be attributed to the naming in isolation. The numbers are small (10 teachers to 24) and directional, not significant. Figures come from the production database with team accounts removed. The series stops in mid-July: after that, winter recess and the V2 migration make the comparison meaningless.</div>
 
@@ -138,5 +142,34 @@
 </div>
 
 </x-dc>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var narrow = window.matchMedia ? matchMedia('(max-width: 640px)') : { matches: false };
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && !reduce && !v.dataset.paused) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.4 }) : null;
+  function wire() {
+    document.querySelectorAll('video[data-autoplay]:not([data-wired])').forEach(function (v) {
+      v.setAttribute('data-wired', '');
+      v.muted = true;
+      if (reduce) v.controls = true;
+      else v.addEventListener('click', function () {
+        if (narrow.matches) { v.play(); if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); return; }
+        if (v.paused) { delete v.dataset.paused; v.play(); } else { v.dataset.paused = '1'; v.pause(); }
+      });
+      if (io) io.observe(v);
+    });
+  }
+  // support.js pinta la página después de este script: se reintenta hasta que aparecen.
+  new MutationObserver(wire).observe(document, { childList: true, subtree: true });
+  var tries = 0, t = setInterval(function () { wire(); if (++tries > 40) clearInterval(t); }, 500);
+  wire();
+})();
+</script>
 </body>
 </html>

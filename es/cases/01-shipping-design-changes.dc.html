@@ -26,7 +26,7 @@
 <x-dc>
 <helmet data-dc-atomics>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}@media (max-width:640px){.case-card{padding:32px 22px!important;gap:36px!important}}</style>
+<style>body{margin:0;background:#F3F2EA;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}@media (max-width:640px){.case-card{padding:32px 22px!important;gap:36px!important}.demo-fig{margin-left:-22px!important;margin-right:-22px!important}.demo-fig figcaption{padding:0 22px}}</style>
 </helmet>
 
 <div data-screen-label="Case 01" style="max-width:1080px;margin:0 auto;padding:36px 6vw 80px;box-sizing:border-box;color:#14161F">
@@ -121,6 +121,10 @@
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Leí lo que realmente escribían en el campo del pedido: el 70% de los pedidos consecutivos de una misma docente contenía el pedido anterior completo, frente al 49% de antes del cambio. En cada ronda volvían a pegar toda su lista de cambios y agregaban el nuevo al final. El más largo llegó a 16.000 caracteres.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">Dos cosas del código hacían que eso fuera doloroso de leer. Cada versión guardaba una referencia a la anterior, así que el original nunca se perdía: en 431 de 431 casos. Y el sistema ya le pasaba automáticamente al modelo el pedido anterior. El producto era no destructivo y tenía memoria. Solo que nunca lo decía, así que las docentes hacían a mano el trabajo de recordar.</p>
       <p style="font-size:15.5px;line-height:1.72;color:#2A2D3A;margin:0 0 18px;max-width:62ch">El nuevo nombre atrajo a más personas a un flujo que todavía les pedía que lo sortearan. Eso fue lo que llevó a replantear desde cero la propia interacción: en la <a href="04-redesigning-the-core-flow.dc.html" style="color:#3452D9;text-decoration:underline">V2</a>, el pedido queda anclado al fragmento que la docente quiere cambiar, con sus pedidos anteriores a la vista. Ahí, en 93 pedidos consecutivos, no hay ningún reenvío.</p>
+      <figure class="demo-fig" style="margin:8px 0 0">
+        <video data-autoplay src="/assets/demo/demo-pedir-cambios.mp4" poster="/assets/demo/demo-pedir-cambios-poster.jpg" muted loop playsinline preload="none" aria-label="Grabación de pantalla: seleccionar un fragmento de la planificación, pedir un cambio y ver lo editado resaltado" style="width:100%;display:block;aspect-ratio:16/10;border:1px solid #E4E2D6;border-radius:10px;background:#FBFAF6;cursor:pointer"></video>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.6;color:#9B9A90;margin-top:10px">V2: al seleccionar un fragmento, el pedido queda anclado a él; la planificación vuelve con la zona editada resaltada. Grabado en una copia de demostración con datos ficticios.</figcaption>
+      </figure>
 
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#4A4A42;background:#FBFAF6;border:1px solid #E4E2D6;border-radius:8px;padding:16px 18px;margin:26px 0 18px;max-width:62ch"><b style="display:block;margin-bottom:8px;color:#14161F">Salvedades</b>El 13 de mayo se lanzaron varias cosas a la vez: el nuevo nombre salió junto con cambios en el flujo de la biblioteca y retoques de interfaz, así que el aumento de la adopción no puede atribuirse al nombre por sí solo. Los números son pequeños (de 10 docentes a 24) e indican una tendencia; no son estadísticamente significativos. Las cifras salen de la base de datos de producción, sin las cuentas del equipo. La serie se corta a mediados de julio: después, las vacaciones de invierno y la migración a la V2 hacen que la comparación pierda sentido.</div>
 
@@ -138,5 +142,34 @@
 </div>
 
 </x-dc>
+<script>
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var narrow = window.matchMedia ? matchMedia('(max-width: 640px)') : { matches: false };
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting && !reduce && !v.dataset.paused) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      else v.pause();
+    });
+  }, { threshold: 0.4 }) : null;
+  function wire() {
+    document.querySelectorAll('video[data-autoplay]:not([data-wired])').forEach(function (v) {
+      v.setAttribute('data-wired', '');
+      v.muted = true;
+      if (reduce) v.controls = true;
+      else v.addEventListener('click', function () {
+        if (narrow.matches) { v.play(); if (v.requestFullscreen) v.requestFullscreen(); else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen(); return; }
+        if (v.paused) { delete v.dataset.paused; v.play(); } else { v.dataset.paused = '1'; v.pause(); }
+      });
+      if (io) io.observe(v);
+    });
+  }
+  // support.js pinta la página después de este script: se reintenta hasta que aparecen.
+  new MutationObserver(wire).observe(document, { childList: true, subtree: true });
+  var tries = 0, t = setInterval(function () { wire(); if (++tries > 40) clearInterval(t); }, 500);
+  wire();
+})();
+</script>
 </body>
 </html>
